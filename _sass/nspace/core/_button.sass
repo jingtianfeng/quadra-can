@@ -1,0 +1,35 @@
+=is-unselectable
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+button
+  background-color: transparent
+  border: 1px solid $color-text-deco
+  border-radius: $border-radius
+  color: $color-text
+  cursor: pointer
+  font-size: $h5-font-size
+  min-width: max-content
+  padding: $nspace2 $nspace3
+  text-align: center
+  white-space: nowrap
+  +is-unselectable
+
+  strong
+    color: inherit
+
+  &:hover, &:active, &:focus
+    border: 1px solid $color-text
+
+  &[disabled], fieldset[disabled] &
+    background-color: transparent
+    border-color: $color-depth
+    box-shadow: none
+    color: $color-text-deco
+
+    svg > use
+      fill: none
+      stroke: $color-depth

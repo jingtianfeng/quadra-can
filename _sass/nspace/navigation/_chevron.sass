@@ -1,0 +1,38 @@
+=chevron
+  border: $stroke-width solid $color-text-deco
+  border-right: 0
+  border-top: 0
+  display: block
+  pointer-events: none
+  transform-origin: center
+
+.chevron
+  +chevron
+  height: 0.5em
+  transform: translateY(-0.05em) rotate(-45deg)
+  width: 0.5em
+
+  &--active
+    transform: translateY(0.2em) rotate(135deg)
+
+.left
+  +chevron
+  height: $icon3
+  transform: translateX($icon3/4) scale(0.75) rotate(45deg)
+  width: $icon3
+
+  &--small
+    height: $icon2
+    transform: translateX($icon2/4) scale(0.75) rotate(45deg)
+    width: $icon2
+
+.right
+  +chevron
+  height: $icon3
+  transform: translateX(-$icon3/4) scale(0.75) rotate(-135deg)
+  width: $icon3
+
+  &--small
+    height: $icon2
+    transform: translateX(-$icon2/4) scale(0.75) rotate(-135deg)
+    width: $icon2

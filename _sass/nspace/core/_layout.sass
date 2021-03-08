@@ -1,0 +1,66 @@
+=screen-small
+  @media screen and (min-width: $screen-small-width-min)
+    @content
+
+=screen-medium
+  @media screen and (min-width: $screen-medium-width-min)
+    @content
+
+=screen-large
+  @media screen and (min-width: $screen-large-width-min)
+    @content
+
+body
+  > header,
+  > section,
+  > footer
+    padding: $nspace1
+    +screen-small
+      padding: $layout-padding-small
+    +screen-medium
+      padding: $layout-padding-medium
+    +screen-large
+      padding: $layout-padding-large
+
+    > .container
+      display: grid
+      margin: auto
+      +screen-small
+        grid-template-columns: repeat($screen-small-column-nbr, minmax($grid-column-width-min, $grid-column-width-max))
+        max-width: $screen-small-container-width-max
+      +screen-medium
+        grid-template-columns: repeat($screen-medium-column-nbr, minmax($grid-column-width-min, $grid-column-width-max))
+        max-width: $screen-medium-container-width-max
+      +screen-large
+        grid-template-columns: repeat($screen-large-column-nbr, minmax($grid-column-width-min, $grid-column-width-max))
+        max-width: $screen-large-container-width-max
+
+  > header
+    > .container
+      min-height: calc(100vh - 2 * #{$nspace1})
+      +screen-small
+        min-height: calc(100vh - 2 * #{$layout-padding-small})
+      +screen-medium
+        min-height: calc(100vh - 2 * #{$layout-padding-medium})
+      +screen-large
+        min-height: calc(100vh - 2 * #{$layout-padding-large})
+
+  > section
+    > .container
+      min-height: calc(500px - 2 * #{$nspace1})
+      +screen-small
+        min-height: calc(500px - 2 * #{$layout-padding-small})
+      +screen-medium
+        min-height: calc(500px - 2 * #{$layout-padding-medium})
+      +screen-large
+        min-height: calc(500px - 2 * #{$layout-padding-large})
+
+  > footer
+    > .container
+      min-height: calc(250px - 2 * #{$nspace1})
+      +screen-small
+        min-height: calc(250px - 2 * #{$layout-padding-small})
+      +screen-medium
+        min-height: calc(250px - 2 * #{$layout-padding-medium})
+      +screen-large
+        min-height: calc(250px - 2 * #{$layout-padding-large})

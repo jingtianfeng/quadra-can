@@ -1,0 +1,15 @@
+.loading
+  animation: spinAround 500ms infinite linear
+  border: $stroke-width solid $color-text-deco
+  border-radius: $border-radius-round
+  border-right-color: transparent
+  border-top-color: transparent
+  display: block
+  height: $icon2
+  width: $icon2
+
+@keyframes spinAround
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(359deg)

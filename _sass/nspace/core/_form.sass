@@ -1,0 +1,79 @@
+fieldset
+  border: none
+
+input,
+textarea
+  &[readonly]
+    border: none
+    pointer-events: none
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=password],
+textarea,
+select
+  max-width: 100%
+  background-color: inherit
+  color: $color-text
+  font-size: 1rem
+  font-family: inherit
+  font-style: italic
+
+input[type=text],
+input[type=email],
+input[type=tel],
+input[type=password],
+textarea
+  display: block
+  min-width: 100%
+  border-radius: $border-radius
+  padding: $nspace2
+
+  &:not([disabled]):not([readonly])
+    border: 1px solid $color-text-deco
+
+    &:hover, &:active, &:focus
+      border: 1px solid $color-text
+
+  &[disabled], fieldset[disabled] &
+    border: 1px solid $color-depth
+    color: $color-text-deco
+
+  label > &
+    margin-top: $nspace2
+
+textarea
+  resize: none
+
+  &:not([rows])
+    min-height: 50px
+    max-height: 200px
+
+  &[rows]
+    height: initial
+
+  &[cols]
+    min-width: unset
+    max-width: unset
+
+input[type="checkbox"],
+input[type="radio"],
+select
+  display: inline-block
+  vertical-align: baseline
+
+select
+  min-width: 8ch
+  border-top: none
+  border-bottom: none
+  border-left: none
+  border-right: none
+  padding: 0 $nspace1
+
+  label + &
+    margin-left: $nspace3
+
+input[type="checkbox"],
+input[type="radio"]
+  margin-right: $nspace2

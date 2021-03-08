@@ -1,0 +1,21 @@
+=is-boxed($lvl)
+  border-radius: $border-radius
+  padding: $nspace4
+  @if $lvl == 1
+    box-shadow: $box-shadow-1
+  @else if $lvl == 2
+    box-shadow: $box-shadow-2
+  @else if $lvl == 3
+    box-shadow: $box-shadow-3
+  @else
+    @error "Unknown depth value."
+
+=is-interactive
+  cursor: pointer
+  opacity: 0.75
+  &:hover
+    opacity: 1
+
+@import "loading"
+@import "sticker-close"
+@import "screen"

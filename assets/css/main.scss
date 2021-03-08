@@ -1,0 +1,113 @@
+---
+---
+
+@font-face {
+  src: url("/assets/fonts/calibre-test-regular.woff") format("woff");
+  font-family: "Calibre";
+}
+
+@font-face {
+  src: url("/assets/fonts/calibre-test-regular-italic.woff") format("woff");
+  font-family: "Calibre";
+  font-style: italic;
+}
+
+@import "main";
+
+footer {
+  .container {
+    #copyright {
+      grid-area: cop;
+      text-align: center;
+      align-self: center;
+    }
+
+    grid-template-areas:
+      "cop";
+
+    @include screen-small {
+      grid-template-areas:
+        "cop cop cop";
+    }
+
+    @include screen-medium {
+      grid-template-areas:
+        "cop cop cop cop cop";
+    }
+
+    @include screen-large {
+      grid-template-areas:
+        "... cop cop cop cop cop ...";
+    }
+  }
+}
+
+#home {
+  &_header {
+    .container {
+      h1 {
+        grid-area: pti;
+      }
+
+      h3 {
+        grid-area: psu;
+      }
+
+      grid-template-areas:
+        "pti"
+        "psu";
+
+      @include screen-small {
+        grid-template-areas:
+          "pti pti pti"
+          "psu psu psu";
+      }
+
+      @include screen-medium {
+        grid-template-areas:
+          "... pti pti pti ..."
+          "... psu psu psu ...";
+      }
+
+      @include screen-large {
+        grid-template-areas:
+          "... ... pti pti pti ... ..."
+          "... ... psu psu psu ... ...";
+      }
+    }
+  }
+
+  &_typography {
+    .container {
+      h2 {
+        grid-area: sti;
+      }
+
+      h3 {
+        grid-area: ssu;
+      }
+
+      grid-template-areas:
+        "sti"
+        "ssu";
+
+      @include screen-small {
+        grid-template-areas:
+          "sti sti sti"
+          "ssu ssu ssu";
+      }
+
+      @include screen-medium {
+        grid-template-areas:
+          "... sti sti sti ..."
+          "... ssu ssu ssu ...";
+      }
+
+      @include screen-large {
+        grid-template-areas:
+          "... ... sti sti sti ... ..."
+          "... ... ssu ssu ssu ... ...";
+      }
+    }
+  }
+}

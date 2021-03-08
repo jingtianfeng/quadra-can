@@ -1,0 +1,26 @@
+.close
+  position: absolute
+  top: $nspace2
+  right: $nspace2
+  height: $icon2
+  width: $icon2
+  border: $nspace1 solid transparent
+  border-radius: $border-radius-round
+  +is-interactive
+
+  &::before, &::after
+    display: block
+    content: ""
+    position: absolute
+    top: calc(50% - #{$stroke-width} / 2)
+    height: $stroke-width
+    width: 100%
+    border-radius: $border-radius
+    background-color: $color-text-deco
+    transform-origin: center
+
+  &::before
+    transform: rotate(45deg)
+
+  &::after
+    transform: rotate(-45deg)
