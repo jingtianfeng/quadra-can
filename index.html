@@ -3,23 +3,91 @@ layout: default
 title: Home
 ---
 
-<header id="home_header">
+<header id="header">
     <div class="container">
-        <h1>
-            nspace
+        <h1 id="page_title">
+            Customer <br>
+            Appreciation <br>
+            Night
         </h1>
-        <h3>
-            Swiss design meets CSS grid
+        <h3 id="page_sub">
+            presented by
         </h3>
+        <div id="logo_quadra">
+            <img src="/assets/img/logo-quadra.png" alt="logo Quadra">
+            Quadra
+        </div>
+        <img id="logo_twentytwo"
+             src="/assets/img/logo-twentytwo.png"
+             alt="logo TwentyTwo">
+        <img id="logo_westin_ottawa"
+             src="/assets/img/logo-westin-ottawa.png"
+             alt="logo Westin Ottawa">
+        <p id="testimonial_text">
+            Great place to network!
+        </p>
+        <h5 id="testimonial_footer">
+            John Doe, B.M. <br>
+            Example Ltd.
+        </h5>
     </div>
 </header>
-<section id="home_typography">
+<section id="section_info">
     <div class="container">
-        <h2>
-            typography
+        <h2 id="info_title">
+            Information
         </h2>
-        <h3>
-            semantic
+        <h3 id="info_sub">
+            for a night to remember
         </h3>
+        <img id="img_chef"
+             src="assets/img/main-chef.jpg"
+             alt="chef">
+        <img id="img_crowd"
+             src="assets/img/main-crowd.jpg"
+             alt="crowd">
+        <img id="img_minibar"
+             src="assets/img/main-minibar.jpg"
+             alt="minibar">
+        <svg id="info_where_icon">
+            <use href="/assets/img/icons.svg#icon-compass-3"></use>
+        </svg>
+        <p id="info_where_text">
+            11 Colonel By Dr, Ottawa <br>
+            ON K1N 9H4
+        </p>
+        <svg id="info_when_icon">
+            <use href="/assets/img/icons.svg#icon-opening-times"></use>
+        </svg>
+        <p id="info_when_text">
+            Tuesday, January 21, 2020 <br>
+            21:00 - 23:30
+        </p>
+        <svg id="info_dress_code_icon">
+            <use href="/assets/img/icons.svg#icon-dress-man"></use>
+        </svg>
+        <p id="info_dress_code_text">
+            Business <br>
+            Casual
+        </p>
+    </div>
+</section>
+<section id="section_cta">
+    <div class="container">
+        <h2 id="cta_title">
+            RSVP
+        </h2>
+        <h3 id="cta_sub">
+            for your name tag
+        </h3>
+        <nametag-form></nametag-form>
+        <svg id="cta_linkedin_icon">
+            <use href="/assets/img/icons.svg#icon-logo-linkedin"></use>
+        </svg>
+        <p id="cta_linkedin_text">
+            Grow your network! <br>
+            Follow us <a target="_blank" rel="noopener noreferrer"
+                         href="https://ca.linkedin.com/company/quadra-chemicals">here</a> <br>
+        </p>
     </div>
 </section>

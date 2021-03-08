@@ -2,112 +2,366 @@
 ---
 
 @font-face {
-  src: url("/assets/fonts/calibre-test-regular.woff") format("woff");
-  font-family: "Calibre";
+  src: url("/assets/fonts/domaine-sans-display-test-regular.woff") format("woff");
+  font-family: "Domaine Sans Display";
 }
 
 @font-face {
-  src: url("/assets/fonts/calibre-test-regular-italic.woff") format("woff");
-  font-family: "Calibre";
+  src: url("/assets/fonts/domaine-sans-display-test-regular-italic.woff") format("woff");
+  font-family: "Domaine Sans Display";
+  font-style: italic;
+}
+
+@font-face {
+  src: url("/assets/fonts/domaine-sans-text-test-regular.woff") format("woff");
+  font-family: "Domaine Sans Text";
+}
+
+@font-face {
+  src: url("/assets/fonts/domaine-sans-text-test-regular-italic.woff") format("woff");
+  font-family: "Domaine Sans Text";
   font-style: italic;
 }
 
 @import "main";
 
-footer {
+#header {
   .container {
-    #copyright {
-      grid-area: cop;
+    grid-row-gap: $nspace3;
+
+    #page_title, #page_sub {
       text-align: center;
-      align-self: center;
+    }
+
+    #page_title {
+      grid-area: pta;
+      align-self: end;
+    }
+
+    #page_sub {
+      grid-area: psu;
+      align-self: end;
+    }
+
+    #logo_quadra,
+    #logo_twentytwo,
+    #logo_westin_ottawa {
+      max-width: 80%;
+      max-height: $icon2;
+      justify-self: center;
+    }
+
+    #logo_quadra {
+      grid-area: lqu;
+      display: grid;
+      grid-template-columns: $icon2 1fr;
+      grid-column-gap: $nspace1;
+      align-items: center;
+      font-family: $font-title;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    #logo_twentytwo {
+      grid-area: ltt;
+    }
+
+    #logo_westin_ottawa {
+      grid-area: lwo;
+      opacity: 0.75;
+    }
+
+    #testimonial {
+      &_text {
+        margin-bottom: 0;
+        grid-area: tet;
+        align-self: end;
+        text-align: end;
+        font-family: $font-title;
+        font-size: 1.35rem;
+        font-style: italic;
+      }
+
+      &_footer {
+        grid-area: tef;
+        text-align: end;
+      }
     }
 
     grid-template-areas:
-      "cop";
+      "pta"
+      "psu"
+      "lqu"
+      "ltt"
+      "lwo"
+      "tet";
 
     @include screen-small {
       grid-template-areas:
-        "cop cop cop";
+        "pta pta pta"
+        "psu psu psu"
+        "lqu ltt lwo"
+        "tet tet tet"
+        "tef tef tef";
     }
 
     @include screen-medium {
       grid-template-areas:
-        "cop cop cop cop cop";
-    }
-
-    @include screen-large {
-      grid-template-areas:
-        "... cop cop cop cop cop ...";
+        "... pta pta pta ..."
+        "... psu psu psu ..."
+        "... lqu ltt lwo ..."
+        "... tet tet tet ..."
+        "... tef tef tef ...";
     }
   }
 }
 
-#home {
-  &_header {
-    .container {
-      h1 {
-        grid-area: pti;
-      }
+#section_info {
+  .container {
+    grid-row-gap: $nspace3;
 
-      h3 {
-        grid-area: psu;
-      }
+    svg {
+      height: $icon3;
+      width: $icon3;
+      align-self: center;
+      justify-self: center;
 
-      grid-template-areas:
-        "pti"
-        "psu";
-
-      @include screen-small {
-        grid-template-areas:
-          "pti pti pti"
-          "psu psu psu";
-      }
-
-      @include screen-medium {
-        grid-template-areas:
-          "... pti pti pti ..."
-          "... psu psu psu ...";
-      }
-
-      @include screen-large {
-        grid-template-areas:
-          "... ... pti pti pti ... ..."
-          "... ... psu psu psu ... ...";
+      use {
+        fill: $color-text-deco;
+        stroke: none;
       }
     }
-  }
 
-  &_typography {
-    .container {
-      h2 {
-        grid-area: sti;
+    p {
+      margin-bottom: 0;
+    }
+
+    #info_title {
+      grid-area: iti;
+      text-align: center;
+    }
+
+    #info_sub {
+      grid-area: isu;
+      text-align: center;
+    }
+
+    #img_chef {
+      grid-area: ich;
+    }
+
+    #img_crowd {
+      grid-area: icr;
+    }
+
+    #img_minibar {
+      grid-area: imb;
+    }
+
+    #info_where {
+      &_icon {
+        grid-area: iwh;
       }
 
-      h3 {
-        grid-area: ssu;
+      &_text {
+        grid-area: twh;
+      }
+    }
+
+    #info_when {
+      &_icon {
+        grid-area: iwe;
       }
 
+      &_text {
+        grid-area: twe;
+      }
+    }
+
+    #info_dress_code {
+      &_icon {
+        grid-area: idc;
+      }
+
+      &_text {
+        grid-area: tdc;
+      }
+    }
+
+    grid-template-areas:
+      "iti"
+      "isu"
+      "..."
+      "..."
+      "ich"
+      "icr"
+      "imb"
+      "..."
+      "..."
+      "iwh"
+      "twh"
+      "iwe"
+      "twe"
+      "idc"
+      "tdc";
+
+    @include screen-small {
       grid-template-areas:
-        "sti"
-        "ssu";
+        "... ... ..."
+        "... ... ..."
+        "iti iti iti"
+        "isu isu isu"
+        "... ... ..."
+        "... ... ..."
+        "ich ich ich"
+        "icr icr icr"
+        "imb imb imb"
+        "... ... ..."
+        "... ... ..."
+        "iwh twh twh"
+        "iwe twe twe"
+        "idc tdc tdc"
+        "... ... ..."
+        "... ... ...";
+    }
 
-      @include screen-small {
-        grid-template-areas:
-          "sti sti sti"
-          "ssu ssu ssu";
+    @include screen-medium {
+      grid-template-areas:
+        "... ... ... ... ..."
+        "... iti iti iti ..."
+        "... isu isu isu ..."
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... ich ich ich ..."
+        "... icr icr icr ..."
+        "... imb imb imb ..."
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... iwh twh twh ..."
+        "... iwe twe twe ..."
+        "... idc tdc tdc ..."
+        "... ... ... ... ...";
+    }
+  }
+}
+
+#section_cta {
+  .container {
+    grid-row-gap: $nspace3;
+
+    #cta_title {
+      grid-area: cti;
+      text-align: center;
+    }
+
+    #cta_sub {
+      grid-area: csu;
+      text-align: center;
+    }
+
+    nametag-form {
+      grid-area: nfo;
+      display: grid;
+      grid-row-gap: $nspace3;
+
+      fieldset:last-child {
+        margin-top: $nspace3;
       }
 
-      @include screen-medium {
-        grid-template-areas:
-          "... sti sti sti ..."
-          "... ssu ssu ssu ...";
+      button:not(:first-child) {
+        margin-left: $nspace2;
       }
 
-      @include screen-large {
-        grid-template-areas:
-          "... ... sti sti sti ... ..."
-          "... ... ssu ssu ssu ... ...";
+      h6 {
+        margin-top: $nspace2;
       }
+    }
+
+    #cta_linkedin_icon {
+      grid-area: cli;
+      height: $icon3;
+      width: $icon3;
+      align-self: center;
+      justify-self: center;
+
+      use {
+        stroke: none;
+        fill: $color-text-deco;
+      }
+    }
+
+    #cta_linkedin_text {
+      grid-area: tli;
+    }
+
+    grid-template-areas:
+      "cti"
+      "csu"
+      "..."
+      "..."
+      "nfo"
+      "cli"
+      "..."
+      "..."
+      "tli";
+
+    @include screen-small {
+      grid-template-areas:
+        "... ... ..."
+        "... ... ..."
+        "cti cti cti"
+        "csu csu csu"
+        "... ... ..."
+        "... ... ..."
+        "nfo nfo nfo"
+        "... ... ..."
+        "... ... ..."
+        "cli tli tli"
+        "... ... ..."
+        "... ... ...";
+    }
+
+    @include screen-medium {
+      grid-template-areas:
+        "... ... ... ... ..."
+        "... cti cti cti ..."
+        "... csu csu csu ..."
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... nfo nfo nfo ..."
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... cli tli tli ..."
+        "... ... ... ... ...";
+    }
+  }
+}
+
+#footer {
+  .container {
+    #signature {
+      grid-area: sig;
+      align-self: center;
+    }
+
+    #copyright {
+      grid-area: cop;
+      text-align: right;
+      align-self: center;
+    }
+
+    grid-template-areas:
+      "sig"
+      "cop";
+
+    @include screen-small {
+      grid-template-areas:
+        "sig cop cop";
+    }
+
+    @include screen-medium {
+      grid-template-areas:
+        "... sig cop cop ...";
     }
   }
 }
