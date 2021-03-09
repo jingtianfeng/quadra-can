@@ -337,6 +337,69 @@
   }
 }
 
+#admin_nametag {
+  .container {
+    grid-row-gap: $nspace3;
+
+    #nametag_title {
+      grid-area: nti;
+      align-self: end;
+    }
+
+    #nametag_sub {
+      grid-area: nsu;
+    }
+
+    nametag-table {
+      grid-area: nta;
+
+      #admin_msg {
+      }
+
+      #admin_csv {
+      }
+
+      #admin_table {
+        margin-top: $nspace5;
+      }
+    }
+
+    grid-template-areas:
+      "nti"
+      "nsu"
+      "..."
+      "..."
+      "nta";
+
+    @include screen-small {
+      grid-template-areas:
+        "nti nti nti"
+        "nsu nsu nsu"
+        "... ... ..."
+        "... ... ..."
+        "nta nta nta";
+    }
+
+    @include screen-medium {
+      grid-template-areas:
+        "nti nti nti nti nti"
+        "nsu nsu nsu nsu nsu"
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "nta nta nta nta nta";
+    }
+
+    @include screen-large {
+      grid-template-areas:
+        "nti nti nti nti nti nti nti"
+        "nsu nsu nsu nsu nsu nsu nsu"
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "nta nta nta nta nta nta nta";
+    }
+  }
+}
+
 #footer {
   .container {
     #signature {

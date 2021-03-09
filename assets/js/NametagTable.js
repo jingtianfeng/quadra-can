@@ -27,31 +27,24 @@ class NametagTable extends LitElement {
 
     render() {
         return html`
-            <div class="columns">
-                <div class="column">
-                    <div class="notification">
-                        <p class="mb-0">
-                            The table underneath displays all the RSVPed name tags.
-                            As a good security measure, please use the Google Cloud Platform's console to edit the
-                            fields.
-                        </p>
-                    </div>
-                </div>
-                <div class="column">
-                    <a class="button"
-                       href="${this.downloadCSVHref}"
-                       download="${this.downloadCSVFilename}">
-                        Download CSV
-                    </a>
-                </div>
-            </div>
-
-            <table class="table is-hoverable">
+            <p id="admin_msg">
+                The table underneath displays all the RSVPed name tags.
+                For security purposes, please use the Google Cloud Platform's console to edit the
+                fields.
+            </p>
+            <a id="admin_csv"
+               href="${this.downloadCSVHref}"
+               download="${this.downloadCSVFilename}">
+                <button>
+                    Download CSV
+                </button>
+            </a>
+            <table id="admin_table">
                 <thead>
                 <tr>
                     <th>Last Name</th>
                     <th>First Name</th>
-                    <th>Organization</th>
+                    <th>Org.</th>
                     <th>Title</th>
                 </tr>
                 </thead>
@@ -67,7 +60,8 @@ class NametagTable extends LitElement {
                     `
                 })}
                 </tbody>
-            </table>`
+            </table>
+        `
     }
 
     createRenderRoot() {
@@ -78,6 +72,9 @@ class NametagTable extends LitElement {
         super.connectedCallback()
 
         this.getNametags().then(() => {
+            this._setDownloadCSVHref()
+        }).catch((err) => {
+            console.log(err)
             this._setDownloadCSVHref()
         })
     }
