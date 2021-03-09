@@ -125,11 +125,6 @@
       width: $icon3;
       align-self: center;
       justify-self: center;
-
-      use {
-        fill: $color-text-deco;
-        stroke: none;
-      }
     }
 
     p {
@@ -283,11 +278,6 @@
       width: $icon3;
       align-self: center;
       justify-self: center;
-
-      use {
-        stroke: none;
-        fill: $color-text-deco;
-      }
     }
 
     #cta_linkedin_text {
