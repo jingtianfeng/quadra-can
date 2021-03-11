@@ -35,7 +35,7 @@
 
     #page_title {
       grid-area: pta;
-      align-self: end;
+      align-self: center;
     }
 
     #page_sub {
@@ -94,22 +94,23 @@
       "lqu"
       "ltt"
       "lwo"
-      "tet";
+      "tet"
+      "tef";
 
     @include screen-small {
       grid-template-areas:
-        "pta pta pta"
         "psu psu psu"
         "lqu ltt lwo"
+        "pta pta pta"
         "tet tet tet"
         "tef tef tef";
     }
 
     @include screen-medium {
       grid-template-areas:
-        "... pta pta pta ..."
         "... psu psu psu ..."
         "... lqu ltt lwo ..."
+        "... pta pta pta ..."
         "... tet tet tet ..."
         "... tef tef tef ...";
     }
@@ -134,13 +135,11 @@
       }
 
       grid-template-areas:
-        "... ... ... ... ... ... ..."
         "... ... psu psu psu ... ..."
         "... ... lqu ltt lwo ... ..."
         "... ... pta pta pta ... ..."
         "... ... tet tet tet ... ..."
-        "... ... tef tef tef ... ..."
-        "... ... ... ... ... ... ...";
+        "... ... tef tef tef ... ...";
     }
   }
 }
