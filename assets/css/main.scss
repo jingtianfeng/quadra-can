@@ -68,7 +68,7 @@
 
     #logo_westin_ottawa {
       grid-area: lwo;
-      opacity: 0.75;
+      opacity: 0.85;
     }
 
     #testimonial {
@@ -112,6 +112,35 @@
         "... lqu ltt lwo ..."
         "... tet tet tet ..."
         "... tef tef tef ...";
+    }
+
+    @include screen-large {
+      #page_title {
+        align-self: center;
+      }
+
+      #page_sub {
+        align-self: end;
+      }
+
+      #testimonial {
+        &_text {
+          text-align: center;
+        }
+
+        &_footer {
+          text-align: center;
+        }
+      }
+
+      grid-template-areas:
+        "... ... ... ... ... ... ..."
+        "... ... psu psu psu ... ..."
+        "... ... lqu ltt lwo ... ..."
+        "... ... pta pta pta ... ..."
+        "... ... tet tet tet ... ..."
+        "... ... tef tef tef ... ..."
+        "... ... ... ... ... ... ...";
     }
   }
 }
@@ -237,6 +266,61 @@
         "... idc tdc tdc ..."
         "... ... ... ... ...";
     }
+
+    @include screen-large {
+      #info_where {
+        &_icon {
+          align-self: end;
+        }
+        &_text {
+          align-self: end;
+        }
+      }
+
+      #info_when {
+        &_icon {
+          align-self: center;
+        }
+
+        &_text {
+          align-self: center;
+        }
+      }
+
+      #info_dress_code {
+        &_icon {
+          align-self: start;
+        }
+
+        &_text {
+          align-self: start;
+        }
+      }
+
+      #img_chef {
+      }
+
+      #img_crowd {
+        align-self: center;
+      }
+
+      #img_minibar {
+      }
+
+      grid-template-areas:
+        "... ... iti iti iti ... ..."
+        "... ... isu isu isu ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ich ich ich ... ..."
+        "... ... icr icr icr ... ..."
+        "... ... imb imb imb ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... iwh twh twh ... ..."
+        "... ... iwe twe twe ... ..."
+        "... ... idc tdc tdc ... ...";
+    }
   }
 }
 
@@ -323,6 +407,18 @@
         "... ... ... ... ..."
         "... cli tli tli ..."
         "... ... ... ... ...";
+    }
+
+    @include screen-large {
+      grid-template-areas:
+        "... ... cti cti cti ... ..."
+        "... ... csu csu csu ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... nfo nfo nfo ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... cli tli tli ... ...";
     }
   }
 }
@@ -415,6 +511,11 @@
     @include screen-medium {
       grid-template-areas:
         "... sig cop cop ...";
+    }
+
+    @include screen-large {
+      grid-template-areas:
+        "... ... sig cop cop ... ...";
     }
   }
 }
