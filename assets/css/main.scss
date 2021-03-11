@@ -169,16 +169,46 @@
       text-align: center;
     }
 
-    #img_chef {
-      grid-area: ich;
+    #chef {
+      &_img {
+        grid-area: chi;
+      }
+
+      &_heading {
+        grid-area: chh;
+      }
+
+      &_paragraph {
+        grid-area: chp;
+      }
     }
 
-    #img_crowd {
-      grid-area: icr;
+    #crowd {
+      &_img {
+        grid-area: cri;
+      }
+
+      &_heading {
+        grid-area: crh;
+      }
+
+      &_paragraph {
+        grid-area: crp;
+      }
     }
 
-    #img_minibar {
-      grid-area: imb;
+    #minibar {
+      &_img {
+        grid-area: mii;
+      }
+
+      &_heading {
+        grid-area: mih;
+      }
+
+      &_paragraph {
+        grid-area: mip;
+      }
     }
 
     #info_where {
@@ -216,9 +246,19 @@
       "isu"
       "..."
       "..."
-      "ich"
-      "icr"
-      "imb"
+      "chi"
+      "chh"
+      "chp"
+      "..."
+      "..."
+      "cri"
+      "crh"
+      "crp"
+      "..."
+      "..."
+      "mii"
+      "mih"
+      "mip"
       "..."
       "..."
       "iwh"
@@ -236,9 +276,19 @@
         "isu isu isu"
         "... ... ..."
         "... ... ..."
-        "ich ich ich"
-        "icr icr icr"
-        "imb imb imb"
+        "chi chi chi"
+        "chh chh chh"
+        "chp chp chp"
+        "... ... ..."
+        "... ... ..."
+        "cri cri cri"
+        "crh crh crh"
+        "crp crp crp"
+        "... ... ..."
+        "... ... ..."
+        "mii mii mii"
+        "mih mih mih"
+        "mip mip mip"
         "... ... ..."
         "... ... ..."
         "iwh twh twh"
@@ -255,9 +305,19 @@
         "... isu isu isu ..."
         "... ... ... ... ..."
         "... ... ... ... ..."
-        "... ich ich ich ..."
-        "... icr icr icr ..."
-        "... imb imb imb ..."
+        "... chi chi chi ..."
+        "... chh chh chh ..."
+        "... chp chp chp ..."
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... cri cri cri ..."
+        "... crh crh crh ..."
+        "... crp crp crp ..."
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... mii mii mii ..."
+        "... mih mih mih ..."
+        "... mip mip mip ..."
         "... ... ... ... ..."
         "... ... ... ... ..."
         "... iwh twh twh ..."
@@ -267,53 +327,24 @@
     }
 
     @include screen-large {
-      #info_where {
-        &_icon {
-          align-self: end;
-        }
-        &_text {
-          align-self: end;
-        }
-      }
-
-      #info_when {
-        &_icon {
-          align-self: center;
-        }
-
-        &_text {
-          align-self: center;
-        }
-      }
-
-      #info_dress_code {
-        &_icon {
-          align-self: start;
-        }
-
-        &_text {
-          align-self: start;
-        }
-      }
-
-      #img_chef {
-      }
-
-      #img_crowd {
-        align-self: center;
-      }
-
-      #img_minibar {
-      }
-
       grid-template-areas:
         "... ... iti iti iti ... ..."
         "... ... isu isu isu ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
-        "... ... ich ich ich ... ..."
-        "... ... icr icr icr ... ..."
-        "... ... imb imb imb ... ..."
+        "... ... chi chi chi ... ..."
+        "... ... chh chh chh ... ..."
+        "... ... chp chp chp ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... cri cri cri ... ..."
+        "... ... crh crh crh ... ..."
+        "... ... crp crp crp ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... mii mii mii ... ..."
+        "... ... mih mih mih ... ..."
+        "... ... mip mip mip ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... iwh twh twh ... ..."
