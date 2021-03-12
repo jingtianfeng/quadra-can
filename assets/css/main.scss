@@ -159,14 +159,22 @@
       margin-bottom: 0;
     }
 
-    #info_title {
-      grid-area: iti;
-      text-align: center;
+    #info {
+      &_title {
+        grid-area: iti;
+        text-align: center;
+      }
+
+      &_sub {
+        grid-area: isu;
+        text-align: center;
+      }
     }
 
-    #info_sub {
-      grid-area: isu;
-      text-align: center;
+    #chef_paragraph,
+    #crowd_paragraph,
+    #minibar_paragraph {
+      color: $color-text-deco;
     }
 
     #chef {
@@ -209,6 +217,12 @@
       &_paragraph {
         grid-area: mip;
       }
+    }
+
+    #info_where_text,
+    #info_when_text,
+    #info_dress_code_text {
+      align-self: center;
     }
 
     #info_where {
@@ -327,24 +341,75 @@
     }
 
     @include screen-large {
+      h4 {
+        font-size: 1.5rem;
+      }
+
+      #chef_img,
+      #crowd_img,
+      #minibar_img {
+        border-radius: $border-radius-round;
+      }
+
+      #chef_heading,
+      #crowd_heading,
+      #minibar_heading {
+        align-self: end;
+      }
+
+      #chef_paragraph,
+      #crowd_paragraph,
+      #minibar_paragraph {
+        font-size: 0.8rem;
+      }
+
+      #chef {
+        &_heading {
+          margin-left: $nspace4;
+        }
+
+        &_paragraph {
+          margin-left: $nspace4;
+        }
+      }
+
+      #crowd {
+        &_heading {
+          margin-right: $nspace4;
+        }
+
+        &_paragraph {
+          margin-right: $nspace4;
+        }
+      }
+
+      #minibar {
+        &_heading {
+          margin-left: $nspace4;
+        }
+
+        &_paragraph {
+          margin-left: $nspace4;
+        }
+      }
+
       grid-template-areas:
         "... ... iti iti iti ... ..."
         "... ... isu isu isu ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
-        "... ... chi chi chi ... ..."
-        "... ... chh chh chh ... ..."
-        "... ... chp chp chp ... ..."
+        "... chi chi chi chh chh ..."
+        "... chi chi chi chp chp ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
-        "... ... cri cri cri ... ..."
-        "... ... crh crh crh ... ..."
-        "... ... crp crp crp ... ..."
+        "... crh crh cri cri cri ..."
+        "... crp crp cri cri cri ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
-        "... ... mii mii mii ... ..."
-        "... ... mih mih mih ... ..."
-        "... ... mip mip mip ... ..."
+        "... mii mii mii mih mih ..."
+        "... mii mii mii mip mip ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... iwh twh twh ... ..."
@@ -400,7 +465,7 @@
         align-items: center;
         max-width: max-content;
         border: 1px solid $color-text-deco;
-        border-radius: $border-radius;
+        border-radius: $border-radius-round;
         padding: $nspace3;
         color: $color-text;
         font-size: 1.25rem;
