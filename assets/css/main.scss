@@ -464,24 +464,26 @@
       &_paragraph {
         grid-area: lip;
         margin-bottom: 0;
+        text-align: center;
       }
 
       &_link {
         grid-area: lil;
+        justify-self: center;
         display: grid;
         grid-template-columns: $icon3 1fr;
-        grid-column-gap: $nspace3;
+        grid-column-gap: $nspace2;
         align-items: center;
         max-width: max-content;
         border: 1px solid $color-text-deco;
-        border-radius: $border-radius-round;
+        border-radius: $border-radius;
         padding: $nspace3;
         color: $color-text;
         font-size: 1.25rem;
 
         svg {
-          height: $icon3;
-          width: $icon3;
+          height: 2rem;
+          width: 2rem;
         }
 
         &:hover, &:active, &:focus {
@@ -494,35 +496,41 @@
 
     #cta_closing {
       grid-area: clo;
+      font-family: $font-title;
+      font-size: 2rem;
+      font-style: italic;
+      line-height: 1;
+      text-align: center;
     }
 
     grid-template-areas:
       "cti"
       "csu"
       "..."
-      "..."
       "nfo"
+      "..."
       "..."
       "..."
       "lip"
       "lil"
+      "..."
       "clo";
 
     @include screen-small {
       grid-template-areas:
         "... ... ..."
-        "... ... ..."
         "cti cti cti"
         "csu csu csu"
-        "... ... ..."
         "... ... ..."
         "nfo nfo nfo"
         "... ... ..."
         "... ... ..."
-        "lip lip lip"
-        "lil lil lil"
-        "clo clo clo"
         "... ... ..."
+        "lip lip lip"
+        "... ... ..."
+        "lil lil lil"
+        "... ... ..."
+        "clo clo clo"
         "... ... ...";
     }
 
@@ -532,12 +540,14 @@
         "... cti cti cti ..."
         "... csu csu csu ..."
         "... ... ... ... ..."
-        "... ... ... ... ..."
         "... nfo nfo nfo ..."
         "... ... ... ... ..."
         "... ... ... ... ..."
+        "... ... ... ... ..."
         "... lip lip lip ..."
+        "... ... ... ... ..."
         "... lil lil lil ..."
+        "... ... ... ... ..."
         "... clo clo clo ..."
         "... ... ... ... ...";
     }
@@ -547,12 +557,14 @@
         "... ... cti cti cti ... ..."
         "... ... csu csu csu ... ..."
         "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
         "... ... nfo nfo nfo ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
         "... ... lip lip lip ... ..."
+        "... ... ... ... ... ... ..."
         "... ... lil lil lil ... ..."
+        "... ... ... ... ... ... ..."
         "... ... clo clo clo ... ...";
     }
   }
