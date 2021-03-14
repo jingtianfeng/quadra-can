@@ -647,15 +647,17 @@
 
 #footer {
   .container {
+    grid-row-gap: $nspace3;
+
     #signature {
       grid-area: sig;
-      align-self: center;
+      align-self: end;
+      text-align: center;
     }
 
     #copyright {
       grid-area: cop;
-      text-align: right;
-      align-self: center;
+      text-align: center;
     }
 
     grid-template-areas:
@@ -664,17 +666,20 @@
 
     @include screen-small {
       grid-template-areas:
-        "sig cop cop";
+        "sig sig sig"
+        "cop cop cop";
     }
 
     @include screen-medium {
       grid-template-areas:
-        "... sig cop cop ...";
+        "... sig sig sig ..."
+        "... cop cop cop ...";
     }
 
     @include screen-large {
       grid-template-areas:
-        "... ... sig cop cop ... ...";
+        "... ... sig sig sig ... ..."
+        "... ... cop cop cop ... ...";
     }
   }
 }
