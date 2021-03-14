@@ -219,40 +219,54 @@
       }
     }
 
-    #info_where_text,
-    #info_when_text,
-    #info_dress_code_text {
-      align-self: center;
-    }
+    #info_main {
+      grid-area: inm;
+      display: grid;
+      padding: $nspace4 $nspace3;
 
-    #info_where {
-      &_icon {
-        grid-area: iwh;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: $nspace4;
+
+      &_where_text,
+      &_when_text,
+      &_dress_code_text {
+        align-self: center;
       }
 
-      &_text {
-        grid-area: twh;
-      }
-    }
+      &_where {
+        &_icon {
+          grid-area: iwh;
+        }
 
-    #info_when {
-      &_icon {
-        grid-area: iwe;
-      }
-
-      &_text {
-        grid-area: twe;
-      }
-    }
-
-    #info_dress_code {
-      &_icon {
-        grid-area: idc;
+        &_text {
+          grid-area: twh;
+        }
       }
 
-      &_text {
-        grid-area: tdc;
+      &_when {
+        &_icon {
+          grid-area: iwe;
+        }
+
+        &_text {
+          grid-area: twe;
+        }
       }
+
+      &_dress_code {
+        &_icon {
+          grid-area: idc;
+        }
+
+        &_text {
+          grid-area: tdc;
+        }
+      }
+
+      grid-template-areas:
+        "iwh twh twh"
+        "iwe twe twe"
+        "idc tdc tdc";
     }
 
     grid-template-areas:
@@ -275,12 +289,7 @@
       "mip"
       "..."
       "..."
-      "iwh"
-      "twh"
-      "iwe"
-      "twe"
-      "idc"
-      "tdc";
+      "inm";
 
     @include screen-small {
       grid-template-areas:
@@ -305,9 +314,7 @@
         "mip mip mip"
         "... ... ..."
         "... ... ..."
-        "iwh twh twh"
-        "iwe twe twe"
-        "idc tdc tdc"
+        "inm inm inm"
         "... ... ..."
         "... ... ...";
     }
@@ -334,9 +341,7 @@
         "... mip mip mip ..."
         "... ... ... ... ..."
         "... ... ... ... ..."
-        "... iwh twh twh ..."
-        "... iwe twe twe ..."
-        "... idc tdc tdc ..."
+        "... inm inm inm ..."
         "... ... ... ... ...";
     }
 
@@ -398,12 +403,18 @@
         "... ... isu isu isu ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
         "... chi chi chi chh chh ..."
         "... chi chi chi chp chp ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
         "... crh crh cri cri cri ..."
         "... crp crp cri cri cri ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... mii mii mii mih mih ..."
@@ -412,9 +423,7 @@
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
-        "... ... iwh twh twh ... ..."
-        "... ... iwe twe twe ... ..."
-        "... ... idc tdc tdc ... ...";
+        "... ... inm inm inm ... ...";
     }
   }
 }
