@@ -15,10 +15,22 @@ class NametagTable extends LitElement {
 
         this.nametags = [
             {
-                first_name: 'Loading...',
-                last_name: 'Loading...',
-                organization: 'Loading...',
-                title: 'Loading...',
+                first_name: 'Jane',
+                last_name: 'DOE',
+                organization: 'Example Inc.',
+                title: 'CEO',
+            },
+            {
+                first_name: 'John',
+                last_name: 'DOE',
+                organization: 'Example Inc.',
+                title: 'CTO',
+            },
+            {
+                first_name: 'Jing Tian',
+                last_name: 'FENG',
+                organization: 'jtfeng',
+                title: 'Software Engineer',
             }
         ]
         this.downloadCSVHref = ''
