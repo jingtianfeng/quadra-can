@@ -376,6 +376,28 @@
         }
       }
 
+      grid-template-areas:
+        "nfo";
+
+      @include screen-small {
+        grid-template-areas:
+          "nfo nfo nfo";
+      }
+
+      @include screen-medium {
+        grid-template-areas:
+          "... nfo nfo nfo ...";
+      }
+
+      @include screen-large {
+        grid-template-areas:
+          "... ... nfo nfo nfo ... ...";
+      }
+    }
+  }
+
+  &_cta3 {
+    .container {
       #cta_linkedin {
         &_paragraph {
           grid-area: lip;
