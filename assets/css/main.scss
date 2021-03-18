@@ -169,77 +169,67 @@
     }
   }
 
-  &_info2 {
+  &_info2,
+  &_info3,
+  &_info4 {
+    .container {
+      .info {
+        &_img {
+          grid-area: iim;
+          align-self: center;
+        }
+
+        &_heading {
+          grid-area: ihe;
+          align-self: end;
+        }
+
+        &_paragraph {
+          grid-area: ipa;
+          margin-bottom: 0;
+        }
+      }
+
+      grid-template-areas:
+        "iim"
+        "ihe"
+        "ipa";
+
+      @include screen-small {
+        grid-template-areas:
+          "iim iim iim"
+          "ihe ihe ihe"
+          "ipa ipa ipa";
+      }
+
+      @include screen-medium {
+        grid-template-areas:
+          "... iim iim iim ..."
+          "... ihe ihe ihe ..."
+          "... ipa ipa ipa ...";
+      }
+
+      @include screen-large {
+        grid-column-gap: $nspace4;
+
+        .info_paragraph {
+          font-size: 0.9rem;
+        }
+
+        grid-template-areas:
+          "... iim iim iim ihe ihe ..."
+          "... iim iim iim ipa ipa ...";
+      }
+    }
+  }
+
+  &_info5 {
     .container {
       svg {
         height: $icon3;
         width: $icon3;
         align-self: center;
         justify-self: center;
-      }
-
-      p {
-        margin-bottom: 0;
-      }
-
-      #info {
-        &_title {
-          grid-area: iti;
-          text-align: center;
-        }
-
-        &_sub {
-          grid-area: isu;
-          text-align: center;
-        }
-      }
-
-      #chef_paragraph,
-      #crowd_paragraph,
-      #minibar_paragraph {
-        color: $color-text-deco;
-      }
-
-      #chef {
-        &_img {
-          grid-area: chi;
-        }
-
-        &_heading {
-          grid-area: chh;
-        }
-
-        &_paragraph {
-          grid-area: chp;
-        }
-      }
-
-      #crowd {
-        &_img {
-          grid-area: cri;
-        }
-
-        &_heading {
-          grid-area: crh;
-        }
-
-        &_paragraph {
-          grid-area: crp;
-        }
-      }
-
-      #minibar {
-        &_img {
-          grid-area: mii;
-        }
-
-        &_heading {
-          grid-area: mih;
-        }
-
-        &_paragraph {
-          grid-area: mip;
-        }
       }
 
       #info_main {
