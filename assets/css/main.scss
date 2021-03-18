@@ -232,14 +232,11 @@
         justify-self: center;
       }
 
+      p {
+        margin-bottom: 0;
+      }
+
       #info_main {
-        grid-area: inm;
-        display: grid;
-        padding: $nspace3;
-
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-row-gap: $nspace4;
-
         &_where_text,
         &_when_text,
         &_dress_code_text {
@@ -275,172 +272,41 @@
             grid-area: tdc;
           }
         }
-
-        grid-template-areas:
-        "iwh twh twh"
-        "iwe twe twe"
-        "idc tdc tdc";
       }
 
       grid-template-areas:
-      "iti"
-      "isu"
-      "..."
-      "..."
-      "..."
-      "chi"
-      "chh"
-      "chp"
-      "..."
-      "..."
-      "..."
-      "cri"
-      "crh"
-      "crp"
-      "..."
-      "..."
-      "..."
-      "mii"
-      "mih"
-      "mip"
-      "..."
-      "inm";
+        "iwh"
+        "twh"
+        "iwe"
+        "twe"
+        "idc"
+        "tdc";
 
       @include screen-small {
         grid-template-areas:
-        "... ... ..."
-        "iti iti iti"
-        "isu isu isu"
-        "... ... ..."
-        "... ... ..."
-        "... ... ..."
-        "chi chi chi"
-        "chh chh chh"
-        "chp chp chp"
-        "... ... ..."
-        "... ... ..."
-        "... ... ..."
-        "cri cri cri"
-        "crh crh crh"
-        "crp crp crp"
-        "... ... ..."
-        "... ... ..."
-        "... ... ..."
-        "mii mii mii"
-        "mih mih mih"
-        "mip mip mip"
-        "... ... ..."
-        "... ... ..."
-        "... ... ..."
-        "inm inm inm"
-        "... ... ...";
+          "... ... ..."
+          "iwh twh twh"
+          "iwe twe twe"
+          "idc tdc tdc"
+          "... ... ...";
       }
 
       @include screen-medium {
         grid-template-areas:
-        "... ... ... ... ..."
-        "... iti iti iti ..."
-        "... isu isu isu ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... chi chi chi ..."
-        "... chh chh chh ..."
-        "... chp chp chp ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... cri cri cri ..."
-        "... crh crh crh ..."
-        "... crp crp crp ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... mii mii mii ..."
-        "... mih mih mih ..."
-        "... mip mip mip ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... inm inm inm ..."
-        "... ... ... ... ...";
+          "... ... ... ... ..."
+          "... iwh twh twh ..."
+          "... iwe twe twe ..."
+          "... idc tdc tdc ..."
+          "... ... ... ... ...";
       }
 
       @include screen-large {
-        h4 {
-          font-size: 1.5rem;
-        }
-
-        #chef_img,
-        #crowd_img,
-        #minibar_img {
-          border-radius: $border-radius-round;
-        }
-
-        #chef_heading,
-        #crowd_heading,
-        #minibar_heading {
-          align-self: end;
-        }
-
-        #chef_paragraph,
-        #crowd_paragraph,
-        #minibar_paragraph {
-          font-size: 0.8rem;
-        }
-
-        #chef {
-          &_heading {
-            margin-left: $nspace4;
-          }
-
-          &_paragraph {
-            margin-left: $nspace4;
-          }
-        }
-
-        #crowd {
-          &_heading {
-            margin-right: $nspace4;
-          }
-
-          &_paragraph {
-            margin-right: $nspace4;
-          }
-        }
-
-        #minibar {
-          &_heading {
-            margin-left: $nspace4;
-          }
-
-          &_paragraph {
-            margin-left: $nspace4;
-          }
-        }
-
         grid-template-areas:
-        "... ... iti iti iti ... ..."
-        "... ... isu isu isu ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... chi chi chi chh chh ..."
-        "... chi chi chi chp chp ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... crh crh cri cri cri ..."
-        "... crp crp cri cri cri ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... mii mii mii mih mih ..."
-        "... mii mii mii mip mip ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... inm inm inm ... ...";
+          "... ... ... ... ... ... ..."
+          "... ... iwh twh twh ... ..."
+          "... ... iwe twe twe ... ..."
+          "... ... idc tdc tdc ... ..."
+          "... ... ... ... ... ... ...";
       }
     }
   }
