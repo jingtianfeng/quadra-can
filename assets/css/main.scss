@@ -25,51 +25,52 @@
 
 @import "main";
 
-#header {
-  .container {
-    #page_title, #page_sub {
-      text-align: center;
-    }
+#home {
+  &_header {
+    .container {
+      #page_title, #page_sub {
+        text-align: center;
+      }
 
-    #page_title {
-      grid-area: pta;
-      align-self: end;
-    }
+      #page_title {
+        grid-area: pta;
+        align-self: end;
+      }
 
-    #page_sub {
-      grid-area: psu;
-      align-self: end;
-    }
+      #page_sub {
+        grid-area: psu;
+        align-self: end;
+      }
 
-    #logo_quadra,
-    #logo_twentytwo,
-    #logo_westin_ottawa {
-      max-width: 80%;
-      max-height: $icon2;
-      justify-self: center;
-    }
+      #logo_quadra,
+      #logo_twentytwo,
+      #logo_westin_ottawa {
+        max-width: 80%;
+        max-height: $icon2;
+        justify-self: center;
+      }
 
-    #logo_quadra {
-      grid-area: lqu;
-      display: grid;
-      grid-template-columns: $icon2 1fr;
-      grid-column-gap: $nspace1;
-      align-items: center;
-      font-family: $font-title;
-      font-size: 1.1rem;
-      line-height: 1;
-    }
+      #logo_quadra {
+        grid-area: lqu;
+        display: grid;
+        grid-template-columns: $icon2 1fr;
+        grid-column-gap: $nspace1;
+        align-items: center;
+        font-family: $font-title;
+        font-size: 1.1rem;
+        line-height: 1;
+      }
 
-    #logo_twentytwo {
-      grid-area: ltt;
-    }
+      #logo_twentytwo {
+        grid-area: ltt;
+      }
 
-    #logo_westin_ottawa {
-      grid-area: lwo;
-      opacity: 0.85;
-    }
+      #logo_westin_ottawa {
+        grid-area: lwo;
+        opacity: 0.85;
+      }
 
-    grid-template-areas:
+      grid-template-areas:
       "..."
       "..."
       "..."
@@ -82,8 +83,8 @@
       "..."
       "...";
 
-    @include screen-small {
-      grid-template-areas:
+      @include screen-small {
+        grid-template-areas:
         "... ... ..."
         "... ... ..."
         "... ... ..."
@@ -93,10 +94,10 @@
         "... ... ..."
         "... ... ..."
         "... ... ...";
-    }
+      }
 
-    @include screen-medium {
-      grid-template-areas:
+      @include screen-medium {
+        grid-template-areas:
         "... ... ... ... ..."
         "... ... ... ... ..."
         "... ... ... ... ..."
@@ -106,10 +107,10 @@
         "... ... ... ... ..."
         "... ... ... ... ..."
         "... ... ... ... ...";
-    }
+      }
 
-    @include screen-large {
-      grid-template-areas:
+      @include screen-large {
+        grid-template-areas:
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
@@ -119,136 +120,179 @@
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ...";
+      }
     }
   }
-}
 
-#section_info {
-  .container {
-    grid-row-gap: $nspace3;
-
-    svg {
-      height: $icon3;
-      width: $icon3;
-      align-self: center;
-      justify-self: center;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
-
-    #info {
-      &_title {
-        grid-area: iti;
-        text-align: center;
-      }
-
-      &_sub {
-        grid-area: isu;
-        text-align: center;
-      }
-    }
-
-    #chef_paragraph,
-    #crowd_paragraph,
-    #minibar_paragraph {
-      color: $color-text-deco;
-    }
-
-    #chef {
-      &_img {
-        grid-area: chi;
-      }
-
-      &_heading {
-        grid-area: chh;
-      }
-
-      &_paragraph {
-        grid-area: chp;
-      }
-    }
-
-    #crowd {
-      &_img {
-        grid-area: cri;
-      }
-
-      &_heading {
-        grid-area: crh;
-      }
-
-      &_paragraph {
-        grid-area: crp;
-      }
-    }
-
-    #minibar {
-      &_img {
-        grid-area: mii;
-      }
-
-      &_heading {
-        grid-area: mih;
-      }
-
-      &_paragraph {
-        grid-area: mip;
-      }
-    }
-
-    #info_main {
-      grid-area: inm;
-      display: grid;
-      padding: $nspace3;
-
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-row-gap: $nspace4;
-
-      &_where_text,
-      &_when_text,
-      &_dress_code_text {
-        align-self: center;
-      }
-
-      &_where {
-        &_icon {
-          grid-area: iwh;
+  &_info1 {
+    .container {
+      #info1 {
+        &_title,
+        &_sub {
+          text-align: center;
         }
 
-        &_text {
-          grid-area: twh;
-        }
-      }
-
-      &_when {
-        &_icon {
-          grid-area: iwe;
+        &_title {
+          grid-area: it2;
+          align-self: end;
+          border-top: 1px solid $color-text-deco;
+          border-bottom: 1px solid $color-text-deco;
+          padding: $nspace3 0;
         }
 
-        &_text {
-          grid-area: twe;
-        }
-      }
-
-      &_dress_code {
-        &_icon {
-          grid-area: idc;
-        }
-
-        &_text {
-          grid-area: tdc;
+        &_sub {
+          grid-area: is1;
         }
       }
 
       grid-template-areas:
+          "it2"
+          "is1";
+
+      @include screen-small {
+        grid-template-areas:
+          "it2 it2 it2"
+          "is1 is1 is1";
+      }
+
+      @include screen-medium {
+        grid-template-areas:
+          "... it2 it2 it2 ..."
+          "... is1 is1 is1 ...";
+      }
+
+      @include screen-large {
+        grid-template-areas:
+          "... ... it2 it2 it2 ... ..."
+          "... ... is1 is1 is1 ... ...";
+      }
+    }
+  }
+
+  &_info2 {
+    .container {
+      svg {
+        height: $icon3;
+        width: $icon3;
+        align-self: center;
+        justify-self: center;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
+      #info {
+        &_title {
+          grid-area: iti;
+          text-align: center;
+        }
+
+        &_sub {
+          grid-area: isu;
+          text-align: center;
+        }
+      }
+
+      #chef_paragraph,
+      #crowd_paragraph,
+      #minibar_paragraph {
+        color: $color-text-deco;
+      }
+
+      #chef {
+        &_img {
+          grid-area: chi;
+        }
+
+        &_heading {
+          grid-area: chh;
+        }
+
+        &_paragraph {
+          grid-area: chp;
+        }
+      }
+
+      #crowd {
+        &_img {
+          grid-area: cri;
+        }
+
+        &_heading {
+          grid-area: crh;
+        }
+
+        &_paragraph {
+          grid-area: crp;
+        }
+      }
+
+      #minibar {
+        &_img {
+          grid-area: mii;
+        }
+
+        &_heading {
+          grid-area: mih;
+        }
+
+        &_paragraph {
+          grid-area: mip;
+        }
+      }
+
+      #info_main {
+        grid-area: inm;
+        display: grid;
+        padding: $nspace3;
+
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: $nspace4;
+
+        &_where_text,
+        &_when_text,
+        &_dress_code_text {
+          align-self: center;
+        }
+
+        &_where {
+          &_icon {
+            grid-area: iwh;
+          }
+
+          &_text {
+            grid-area: twh;
+          }
+        }
+
+        &_when {
+          &_icon {
+            grid-area: iwe;
+          }
+
+          &_text {
+            grid-area: twe;
+          }
+        }
+
+        &_dress_code {
+          &_icon {
+            grid-area: idc;
+          }
+
+          &_text {
+            grid-area: tdc;
+          }
+        }
+
+        grid-template-areas:
         "iwh twh twh"
         "iwe twe twe"
         "idc tdc tdc";
-    }
+      }
 
-    grid-template-areas:
+      grid-template-areas:
       "iti"
       "isu"
       "..."
@@ -272,8 +316,8 @@
       "..."
       "inm";
 
-    @include screen-small {
-      grid-template-areas:
+      @include screen-small {
+        grid-template-areas:
         "... ... ..."
         "iti iti iti"
         "isu isu isu"
@@ -300,10 +344,10 @@
         "... ... ..."
         "inm inm inm"
         "... ... ...";
-    }
+      }
 
-    @include screen-medium {
-      grid-template-areas:
+      @include screen-medium {
+        grid-template-areas:
         "... ... ... ... ..."
         "... iti iti iti ..."
         "... isu isu isu ..."
@@ -330,62 +374,62 @@
         "... ... ... ... ..."
         "... inm inm inm ..."
         "... ... ... ... ...";
-    }
-
-    @include screen-large {
-      h4 {
-        font-size: 1.5rem;
       }
 
-      #chef_img,
-      #crowd_img,
-      #minibar_img {
-        border-radius: $border-radius-round;
-      }
-
-      #chef_heading,
-      #crowd_heading,
-      #minibar_heading {
-        align-self: end;
-      }
-
-      #chef_paragraph,
-      #crowd_paragraph,
-      #minibar_paragraph {
-        font-size: 0.8rem;
-      }
-
-      #chef {
-        &_heading {
-          margin-left: $nspace4;
+      @include screen-large {
+        h4 {
+          font-size: 1.5rem;
         }
 
-        &_paragraph {
-          margin-left: $nspace4;
-        }
-      }
-
-      #crowd {
-        &_heading {
-          margin-right: $nspace4;
+        #chef_img,
+        #crowd_img,
+        #minibar_img {
+          border-radius: $border-radius-round;
         }
 
-        &_paragraph {
-          margin-right: $nspace4;
-        }
-      }
-
-      #minibar {
-        &_heading {
-          margin-left: $nspace4;
+        #chef_heading,
+        #crowd_heading,
+        #minibar_heading {
+          align-self: end;
         }
 
-        &_paragraph {
-          margin-left: $nspace4;
+        #chef_paragraph,
+        #crowd_paragraph,
+        #minibar_paragraph {
+          font-size: 0.8rem;
         }
-      }
 
-      grid-template-areas:
+        #chef {
+          &_heading {
+            margin-left: $nspace4;
+          }
+
+          &_paragraph {
+            margin-left: $nspace4;
+          }
+        }
+
+        #crowd {
+          &_heading {
+            margin-right: $nspace4;
+          }
+
+          &_paragraph {
+            margin-right: $nspace4;
+          }
+        }
+
+        #minibar {
+          &_heading {
+            margin-left: $nspace4;
+          }
+
+          &_paragraph {
+            margin-left: $nspace4;
+          }
+        }
+
+        grid-template-areas:
         "... ... iti iti iti ... ..."
         "... ... isu isu isu ... ..."
         "... ... ... ... ... ... ..."
@@ -407,86 +451,86 @@
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... inm inm inm ... ...";
+      }
     }
   }
-}
 
-#section_cta {
-  .container {
-    grid-row-gap: $nspace3;
-
-    #cta_title {
-      grid-area: cti;
-      text-align: center;
-    }
-
-    #cta_sub {
-      grid-area: csu;
-      text-align: center;
-    }
-
-    nametag-form {
-      grid-area: nfo;
-      display: grid;
+  &_cta1 {
+    .container {
       grid-row-gap: $nspace3;
 
-      fieldset:last-child {
-        margin-top: $nspace3;
-      }
-
-      button:not(:first-child) {
-        margin-left: $nspace2;
-      }
-
-      h6 {
-        margin-top: $nspace2;
-      }
-    }
-
-    #cta_linkedin {
-      &_paragraph {
-        grid-area: lip;
-        margin-bottom: 0;
+      #cta_title {
+        grid-area: cti;
         text-align: center;
       }
 
-      &_link {
-        grid-area: lil;
-        justify-self: center;
-        display: grid;
-        grid-template-columns: $icon3 1fr;
-        grid-column-gap: $nspace2;
-        align-items: center;
-        max-width: max-content;
-        border: 1px solid $color-text-deco;
-        border-radius: $border-radius;
-        padding: $nspace3;
-        color: $color-text;
-        font-size: 1.25rem;
-
-        svg {
-          height: 2rem;
-          width: 2rem;
-        }
-
-        &:hover, &:active, &:focus {
-          border-color: $color-text;
-        }
-
-        @include is-unselectable;
+      #cta_sub {
+        grid-area: csu;
+        text-align: center;
       }
-    }
 
-    #cta_closing {
-      grid-area: clo;
-      font-family: $font-title;
-      font-size: 2rem;
-      font-style: italic;
-      line-height: 1;
-      text-align: center;
-    }
+      nametag-form {
+        grid-area: nfo;
+        display: grid;
+        grid-row-gap: $nspace3;
 
-    grid-template-areas:
+        fieldset:last-child {
+          margin-top: $nspace3;
+        }
+
+        button:not(:first-child) {
+          margin-left: $nspace2;
+        }
+
+        h6 {
+          margin-top: $nspace2;
+        }
+      }
+
+      #cta_linkedin {
+        &_paragraph {
+          grid-area: lip;
+          margin-bottom: 0;
+          text-align: center;
+        }
+
+        &_link {
+          grid-area: lil;
+          justify-self: center;
+          display: grid;
+          grid-template-columns: $icon3 1fr;
+          grid-column-gap: $nspace2;
+          align-items: center;
+          max-width: max-content;
+          border: 1px solid $color-text-deco;
+          border-radius: $border-radius;
+          padding: $nspace3;
+          color: $color-text;
+          font-size: 1.25rem;
+
+          svg {
+            height: 2rem;
+            width: 2rem;
+          }
+
+          &:hover, &:active, &:focus {
+            border-color: $color-text;
+          }
+
+          @include is-unselectable;
+        }
+      }
+
+      #cta_closing {
+        grid-area: clo;
+        font-family: $font-title;
+        font-size: 2rem;
+        font-style: italic;
+        line-height: 1;
+        text-align: center;
+      }
+
+      grid-template-areas:
       "cti"
       "csu"
       "..."
@@ -501,8 +545,8 @@
       "..."
       "clo";
 
-    @include screen-small {
-      grid-template-areas:
+      @include screen-small {
+        grid-template-areas:
         "... ... ..."
         "cti cti cti"
         "csu csu csu"
@@ -519,10 +563,10 @@
         "... ... ..."
         "clo clo clo"
         "... ... ...";
-    }
+      }
 
-    @include screen-medium {
-      grid-template-areas:
+      @include screen-medium {
+        grid-template-areas:
         "... ... ... ... ..."
         "... cti cti cti ..."
         "... csu csu csu ..."
@@ -539,10 +583,10 @@
         "... ... ... ... ..."
         "... clo clo clo ..."
         "... ... ... ... ...";
-    }
+      }
 
-    @include screen-large {
-      grid-template-areas:
+      @include screen-large {
+        grid-template-areas:
         "... ... cti cti cti ... ..."
         "... ... csu csu csu ... ..."
         "... ... ... ... ... ... ..."
@@ -557,6 +601,7 @@
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "... ... clo clo clo ... ...";
+      }
     }
   }
 }
