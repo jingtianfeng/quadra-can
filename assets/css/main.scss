@@ -27,15 +27,13 @@
 
 #header {
   .container {
-    grid-row-gap: $nspace3;
-
     #page_title, #page_sub {
       text-align: center;
     }
 
     #page_title {
       grid-area: pta;
-      align-self: center;
+      align-self: end;
     }
 
     #page_sub {
@@ -71,75 +69,56 @@
       opacity: 0.85;
     }
 
-    #testimonial {
-      &_text {
-        margin-bottom: 0;
-        grid-area: tet;
-        align-self: end;
-        text-align: end;
-        font-family: $font-title;
-        font-size: 1.35rem;
-        font-style: italic;
-      }
-
-      &_footer {
-        grid-area: tef;
-        text-align: end;
-      }
-    }
-
     grid-template-areas:
+      "..."
+      "..."
+      "..."
       "pta"
       "psu"
       "lqu"
       "ltt"
       "lwo"
-      "tet"
-      "tef";
+      "..."
+      "..."
+      "...";
 
     @include screen-small {
       grid-template-areas:
+        "... ... ..."
+        "... ... ..."
+        "... ... ..."
+        "pta pta pta"
         "psu psu psu"
         "lqu ltt lwo"
-        "pta pta pta"
-        "tet tet tet"
-        "tef tef tef";
+        "... ... ..."
+        "... ... ..."
+        "... ... ...";
     }
 
     @include screen-medium {
       grid-template-areas:
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... pta pta pta ..."
         "... psu psu psu ..."
         "... lqu ltt lwo ..."
-        "... pta pta pta ..."
-        "... tet tet tet ..."
-        "... tef tef tef ...";
+        "... ... ... ... ..."
+        "... ... ... ... ..."
+        "... ... ... ... ...";
     }
 
     @include screen-large {
-      #page_title {
-        align-self: center;
-      }
-
-      #page_sub {
-        align-self: end;
-      }
-
-      #testimonial {
-        &_text {
-          text-align: center;
-        }
-
-        &_footer {
-          text-align: center;
-        }
-      }
-
       grid-template-areas:
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... pta pta pta ... ..."
         "... ... psu psu psu ... ..."
         "... ... lqu ltt lwo ... ..."
-        "... ... pta pta pta ... ..."
-        "... ... tet tet tet ... ..."
-        "... ... tef tef tef ... ...";
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ..."
+        "... ... ... ... ... ... ...";
     }
   }
 }
