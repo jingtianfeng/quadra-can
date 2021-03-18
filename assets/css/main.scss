@@ -332,32 +332,6 @@
         }
       }
 
-      grid-template-areas:
-          "ct2"
-          "cs1";
-
-      @include screen-small {
-        grid-template-areas:
-            "ct2 ct2 ct2"
-            "cs1 cs1 cs1";
-      }
-
-      @include screen-medium {
-        grid-template-areas:
-          "... ct2 ct2 ct2 ..."
-          "... cs1 cs1 cs1 ...";
-      }
-
-      @include screen-large {
-        grid-template-areas:
-          "... ... ct2 ct2 ct2 ... ..."
-          "... ... cs1 cs1 cs1 ... ...";
-      }
-    }
-  }
-
-  &_cta2 {
-    .container {
       nametag-form {
         grid-area: nfo;
         display: grid;
@@ -377,20 +351,40 @@
       }
 
       grid-template-areas:
-        "nfo";
+          "ct2"
+          "cs1"
+          "..."
+          "..."
+          "..."
+          "nfo";
 
       @include screen-small {
         grid-template-areas:
-          "nfo nfo nfo";
+            "ct2 ct2 ct2"
+            "cs1 cs1 cs1"
+            "... ... ..."
+            "... ... ..."
+            "... ... ..."
+            "nfo nfo nfo";
       }
 
       @include screen-medium {
         grid-template-areas:
+          "... ct2 ct2 ct2 ..."
+          "... cs1 cs1 cs1 ..."
+          "... ... ... ... ..."
+          "... ... ... ... ..."
+          "... ... ... ... ..."
           "... nfo nfo nfo ...";
       }
 
       @include screen-large {
         grid-template-areas:
+          "... ... ct2 ct2 ct2 ... ..."
+          "... ... cs1 cs1 cs1 ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... ... ... ... ... ..."
           "... ... nfo nfo nfo ... ...";
       }
     }
