@@ -313,18 +313,51 @@
 
   &_cta1 {
     .container {
-      grid-row-gap: $nspace3;
+      #cta1 {
+        &_title,
+        &_sub {
+          text-align: center;
+        }
 
-      #cta_title {
-        grid-area: cti;
-        text-align: center;
+        &_title {
+          grid-area: ct2;
+          align-self: end;
+          border-top: 1px solid $color-text-deco;
+          border-bottom: 1px solid $color-text-deco;
+          padding: $nspace3 0;
+        }
+
+        &_sub {
+          grid-area: cs1;
+        }
       }
 
-      #cta_sub {
-        grid-area: csu;
-        text-align: center;
+      grid-template-areas:
+          "ct2"
+          "cs1";
+
+      @include screen-small {
+        grid-template-areas:
+            "ct2 ct2 ct2"
+            "cs1 cs1 cs1";
       }
 
+      @include screen-medium {
+        grid-template-areas:
+          "... ct2 ct2 ct2 ..."
+          "... cs1 cs1 cs1 ...";
+      }
+
+      @include screen-large {
+        grid-template-areas:
+          "... ... ct2 ct2 ct2 ... ..."
+          "... ... cs1 cs1 cs1 ... ...";
+      }
+    }
+  }
+
+  &_cta2 {
+    .container {
       nametag-form {
         grid-area: nfo;
         display: grid;
