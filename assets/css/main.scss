@@ -358,8 +358,6 @@
             "ct2 ct2 ct2"
             "cs1 cs1 cs1"
             "... ... ..."
-            "... ... ..."
-            "... ... ..."
             "nfo nfo nfo";
       }
 
@@ -367,8 +365,6 @@
         grid-template-areas:
           "... ct2 ct2 ct2 ..."
           "... cs1 cs1 cs1 ..."
-          "... ... ... ... ..."
-          "... ... ... ... ..."
           "... ... ... ... ..."
           "... nfo nfo nfo ...";
       }
@@ -378,24 +374,31 @@
           "... ... ct2 ct2 ct2 ... ..."
           "... ... cs1 cs1 cs1 ... ..."
           "... ... ... ... ... ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... ... ... ... ... ..."
           "... ... nfo nfo nfo ... ...";
       }
     }
   }
 
-  &_cta3 {
+  &_cta2 {
     .container {
-      #cta_linkedin {
+      #cta2_title {
+        grid-area: cti;
+        text-align: center;
+        border-top: 1px solid $color-text-deco;
+        border-bottom: 1px solid $color-text-deco;
+        padding: $nspace3;
+      }
+
+      #cta2_linkedin {
         &_paragraph {
-          grid-area: lip;
-          margin-bottom: 0;
+          grid-area: cpa;
+          margin: auto;
+          max-width: 30ch;
           text-align: center;
         }
 
         &_link {
-          grid-area: lil;
+          grid-area: cli;
           justify-self: center;
           display: grid;
           grid-template-columns: $icon3 1fr;
@@ -421,86 +424,38 @@
         }
       }
 
-      #cta_closing {
-        grid-area: clo;
-        font-family: $font-title;
-        font-size: 2rem;
-        font-style: italic;
-        line-height: 1;
-        text-align: center;
-      }
-
       grid-template-areas:
-      "cti"
-      "csu"
-      "..."
-      "nfo"
-      "..."
-      "..."
-      "..."
-      "lip"
-      "lil"
-      "..."
-      "..."
-      "..."
-      "clo";
+        "cti"
+        "cpa"
+        "cli";
 
       @include screen-small {
         grid-template-areas:
-        "... ... ..."
-        "cti cti cti"
-        "csu csu csu"
-        "... ... ..."
-        "nfo nfo nfo"
-        "... ... ..."
-        "... ... ..."
-        "... ... ..."
-        "lip lip lip"
-        "... ... ..."
-        "lil lil lil"
-        "... ... ..."
-        "... ... ..."
-        "... ... ..."
-        "clo clo clo"
-        "... ... ...";
+          "... ... ..."
+          "cti cti cti"
+          "... ... ..."
+          "cpa cpa cpa"
+          "... ... ..."
+          "cli cli cli"
+          "... ... ...";
       }
 
       @include screen-medium {
         grid-template-areas:
-        "... ... ... ... ..."
-        "... cti cti cti ..."
-        "... csu csu csu ..."
-        "... ... ... ... ..."
-        "... nfo nfo nfo ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... lip lip lip ..."
-        "... ... ... ... ..."
-        "... lil lil lil ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... clo clo clo ..."
-        "... ... ... ... ...";
+          "... cti cti cti ..."
+          "... ... ... ... ..."
+          "... cpa cpa cpa ..."
+          "... ... ... ... ..."
+          "... cli cli cli ...";
       }
 
       @include screen-large {
         grid-template-areas:
-        "... ... cti cti cti ... ..."
-        "... ... csu csu csu ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... nfo nfo nfo ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... lip lip lip ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... lil lil lil ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... clo clo clo ... ...";
+          "... ... cti cti cti ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... cpa cpa cpa ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... cli cli cli ... ...";
       }
     }
   }
