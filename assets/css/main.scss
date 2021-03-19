@@ -126,6 +126,17 @@
 
   &_info1 {
     .container {
+      svg {
+        height: $icon3;
+        width: $icon3;
+        align-self: center;
+        justify-self: center;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+
       #info1 {
         &_title,
         &_sub {
@@ -143,28 +154,100 @@
         &_sub {
           grid-area: is1;
         }
+
+        &_where_text,
+        &_when_text,
+        &_dress_code_text {
+          align-self: center;
+        }
+
+        &_where {
+          &_icon {
+            grid-area: iwh;
+          }
+
+          &_text {
+            grid-area: twh;
+          }
+        }
+
+        &_when {
+          &_icon {
+            grid-area: iwe;
+          }
+
+          &_text {
+            grid-area: twe;
+          }
+        }
+
+        &_dress_code {
+          &_icon {
+            grid-area: idc;
+          }
+
+          &_text {
+            grid-area: tdc;
+          }
+        }
       }
 
       grid-template-areas:
           "it2"
-          "is1";
+          "is1"
+          "iwh"
+          "twh"
+          "iwe"
+          "twe"
+          "idc"
+          "tdc";
 
       @include screen-small {
         grid-template-areas:
           "it2 it2 it2"
-          "is1 is1 is1";
+          "is1 is1 is1"
+          "... ... ..."
+          "... ... ..."
+          "... ... ..."
+          "iwh twh twh"
+          "... ... ..."
+          "iwe twe twe"
+          "... ... ..."
+          "idc tdc tdc"
+          "... ... ..."
+          "... ... ..."
+          "... ... ...";
       }
 
       @include screen-medium {
         grid-template-areas:
           "... it2 it2 it2 ..."
-          "... is1 is1 is1 ...";
+          "... is1 is1 is1 ..."
+          "... ... ... ... ..."
+          "... ... ... ... ..."
+          "... ... ... ... ..."
+          "... iwh twh twh ..."
+          "... ... ... ... ..."
+          "... iwe twe twe ..."
+          "... ... ... ... ..."
+          "... idc tdc tdc ..."
+          "... ... ... ... ..."
+          "... ... ... ... ..."
+          "... ... ... ... ...";
       }
 
       @include screen-large {
         grid-template-areas:
           "... ... it2 it2 it2 ... ..."
-          "... ... is1 is1 is1 ... ...";
+          "... ... is1 is1 is1 ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... iwh twh twh ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... iwe twe twe ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... idc tdc tdc ... ...";
       }
     }
   }
@@ -219,94 +302,6 @@
         grid-template-areas:
           "... iim iim iim ihe ihe ..."
           "... iim iim iim ipa ipa ...";
-      }
-    }
-  }
-
-  &_info5 {
-    .container {
-      svg {
-        height: $icon3;
-        width: $icon3;
-        align-self: center;
-        justify-self: center;
-      }
-
-      p {
-        margin-bottom: 0;
-      }
-
-      #info_main {
-        &_where_text,
-        &_when_text,
-        &_dress_code_text {
-          align-self: center;
-        }
-
-        &_where {
-          &_icon {
-            grid-area: iwh;
-          }
-
-          &_text {
-            grid-area: twh;
-          }
-        }
-
-        &_when {
-          &_icon {
-            grid-area: iwe;
-          }
-
-          &_text {
-            grid-area: twe;
-          }
-        }
-
-        &_dress_code {
-          &_icon {
-            grid-area: idc;
-          }
-
-          &_text {
-            grid-area: tdc;
-          }
-        }
-      }
-
-      grid-template-areas:
-        "iwh"
-        "twh"
-        "iwe"
-        "twe"
-        "idc"
-        "tdc";
-
-      @include screen-small {
-        grid-template-areas:
-          "... ... ..."
-          "iwh twh twh"
-          "iwe twe twe"
-          "idc tdc tdc"
-          "... ... ...";
-      }
-
-      @include screen-medium {
-        grid-template-areas:
-          "... ... ... ... ..."
-          "... iwh twh twh ..."
-          "... iwe twe twe ..."
-          "... idc tdc tdc ..."
-          "... ... ... ... ...";
-      }
-
-      @include screen-large {
-        grid-template-areas:
-          "... ... ... ... ... ... ..."
-          "... ... iwh twh twh ... ..."
-          "... ... iwe twe twe ... ..."
-          "... ... idc tdc tdc ... ..."
-          "... ... ... ... ... ... ...";
       }
     }
   }
