@@ -31,7 +31,7 @@
     position: relative;
 
     .container {
-      grid-template-rows: 1.375fr min-content 1fr min-content;
+      grid-template-rows: 1.25fr 1fr min-content;
 
       #header_title, #header_sub {
         text-align: center;
@@ -47,7 +47,7 @@
         display: flex;
         column-gap: $nspace3;
         align-items: center;
-        margin: 0 auto auto auto;
+        margin: $nspace4 auto auto auto;
 
         > #sponsors_twentytwo,
         > #sponsors_westin-ottawa {
@@ -55,11 +55,12 @@
         }
 
         > #sponsors_twentytwo {
-          height: 24px;
+          height: 20px;
         }
 
         > #sponsors_quadra {
           display: flex;
+          font-family: $font-title;
 
           > img {
             height: 30px;
@@ -84,14 +85,12 @@
 
       grid-template-areas:
         "ht1"
-        "..."
         "hsp"
         "hsc";
 
       @include screen-small {
         grid-template-areas:
           "ht1 ht1 ht1"
-          "... ... ..."
           "hsp hsp hsp"
           "hsc hsc hsc";
       }
@@ -99,19 +98,15 @@
       @include screen-medium {
         grid-template-areas:
           "... ht1 ht1 ht1 ..."
-          "... ... ... ... ..."
           "... hsp hsp hsp ..."
           "... hsc hsc hsc ...";
       }
 
       @include screen-large {
-        grid-template-rows: 2.625fr repeat(3, min-content) 1fr min-content;
+        grid-template-rows: 1.625fr 1fr min-content;
 
         grid-template-areas:
           "... ht1 ht1 ht1 ht1 ht1 ..."
-          "... ... ... ... ... ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... ... ... ... ... ..."
           "... ... hsp hsp hsp ... ..."
           "... ... hsc hsc hsc ... ...";
       }
