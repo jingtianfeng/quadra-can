@@ -223,8 +223,6 @@
       }
 
       @include screen-large {
-        grid-column-gap: $nspace4;
-
         .info_paragraph {
           font-size: 0.9rem;
         }
@@ -238,6 +236,25 @@
 
   &_about_data {
     .container {
+      #data_where,
+      #data_when,
+      #data_dress-code {
+        display: flex;
+        align-items: center;
+
+        > svg {
+          height: $icon3;
+          width: $icon3;
+          margin-right: $nspace4;
+        }
+
+        > p {
+          color: $color-text;
+          font-size: 1rem;
+          line-height: $h5-line-height;
+        }
+      }
+
       #data_where {
         grid-area: dwh;
       }
@@ -250,16 +267,48 @@
         grid-area: ddc;
       }
 
+      #data_paragraph {
+        grid-area: dpa;
+        align-self: end;
+      }
+
+      #data_email {
+        grid-area: dem;
+      }
+
       grid-template-areas:
         "dwh"
         "dwe"
-        "ddc";
+        "ddc"
+        "..."
+        "dpa"
+        "dem";
 
       @include screen-small {
         grid-template-areas:
           "dwh dwh dwh"
           "dwe dwe dwe"
-          "ddc ddc ddc";
+          "ddc ddc ddc"
+          "... ... ..."
+          "dpa dpa dpa"
+          "dem dem dem";
+      }
+
+      @include screen-medium {
+        grid-template-areas:
+          "... dwh dwh dwh ..."
+          "... dwe dwe dwe ..."
+          "... ddc ddc ddc ..."
+          "... ... ... ... ..."
+          "... dpa dpa dpa ..."
+          "... dem dem dem ...";
+      }
+
+      @include screen-large {
+        grid-template-areas:
+          "... dwh dwh dwh dpa dpa dpa"
+          "... dwe dwe dwe dpa dpa dpa"
+          "... ddc ddc ddc dem dem dem";
       }
     }
   }
@@ -295,10 +344,6 @@
         grid-area: che;
       }
 
-      #contact_paragraph {
-        grid-area: cpa;
-      }
-
       #contact_linkedin {
         grid-area: cli;
         justify-self: center;
@@ -327,27 +372,23 @@
 
       grid-template-areas:
         "che"
-        "cpa"
         "cli";
 
       @include screen-small {
         grid-template-areas:
           "che che che"
-          "cpa cpa cpa"
           "cli cli cli";
       }
 
       @include screen-medium {
         grid-template-areas:
           "... che che che ..."
-          "... cpa cpa cpa ..."
           "... cli cli cli ...";
       }
 
       @include screen-large {
         grid-template-areas:
           "... ... che che che ... ..."
-          "... ... cpa cpa cpa ... ..."
           "... ... cli cli cli ... ...";
       }
     }
