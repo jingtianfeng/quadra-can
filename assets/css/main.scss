@@ -236,79 +236,101 @@
 
   &_about_data {
     .container {
-      #data_where,
-      #data_when,
-      #data_dress-code {
-        display: flex;
+      #info_where_icon,
+      #info_when_icon,
+      #info_dress-code_icon {
+        height: $icon3;
+        width: $icon3;
+        margin-right: $nspace4;
+      }
+
+      #info_where_paragraph,
+      #info_when_paragraph,
+      #info_dress-code_paragraph {
+        color: $color-text;
+      }
+
+      #data_info {
+        grid-area: din;
+        display: grid;
+        grid-template-columns: $icon3 max-content;
+        grid-column-gap: $nspace4;
+        grid-row-gap: $nspace3;
         align-items: center;
+        margin: 0 auto auto auto;
 
-        > svg {
-          height: $icon3;
-          width: $icon3;
-          margin-right: $nspace4;
+        #info {
+          &_where {
+            &_icon {
+              grid-area: whi;
+            }
+
+            &_paragraph {
+              grid-area: whp;
+            }
+          }
+
+          &_when {
+            &_icon {
+              grid-area: wei;
+            }
+
+            &_paragraph {
+              grid-area: wep;
+            }
+          }
+
+          &_dress-code {
+            &_icon {
+              grid-area: dci;
+            }
+
+            &_paragraph {
+              grid-area: dcp;
+            }
+          }
         }
 
-        > p {
-          color: $color-text;
-          font-size: 1rem;
-          line-height: $h5-line-height;
-        }
-      }
-
-      #data_where {
-        grid-area: dwh;
-      }
-
-      #data_when {
-        grid-area: dwe;
-      }
-
-      #data_dress-code {
-        grid-area: ddc;
+        grid-template-areas:
+          "whi whp"
+          "wei wep"
+          "dci dcp";
       }
 
       #data_paragraph {
         grid-area: dpa;
-        align-self: end;
       }
 
-      #data_email {
-        grid-area: dem;
+      #data_cta {
+        grid-area: dct;
       }
 
       grid-template-areas:
-        "dwh"
-        "dwe"
-        "ddc"
+        "din"
         "..."
         "dpa"
-        "dem";
+        "dct";
 
       @include screen-small {
         grid-template-areas:
-          "dwh dwh dwh"
-          "dwe dwe dwe"
-          "ddc ddc ddc"
+          "din din din"
           "... ... ..."
           "dpa dpa dpa"
-          "dem dem dem";
+          "dct dct dct";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... dwh dwh dwh ..."
-          "... dwe dwe dwe ..."
-          "... ddc ddc ddc ..."
+          "... din din din ..."
           "... ... ... ... ..."
           "... dpa dpa dpa ..."
-          "... dem dem dem ...";
+          "... dct dct dct ...";
       }
 
       @include screen-large {
         grid-template-areas:
-          "... dwh dwh dwh dpa dpa dpa"
-          "... dwe dwe dwe dpa dpa dpa"
-          "... ddc ddc ddc dem dem dem";
+          "din din din ... dpa dpa dpa"
+          "din din din ... dct dct dct";
       }
     }
   }
