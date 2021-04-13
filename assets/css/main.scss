@@ -113,172 +113,44 @@
     }
   }
 
-  &_info1 {
+  &_showcase_food,
+  &_showcase_crowd,
+  &_showcase_minibar {
     .container {
-      svg {
-        height: $icon3;
-        width: $icon3;
-        align-self: center;
-        justify-self: center;
-      }
-
-      p {
-        margin-bottom: 0;
-      }
-
-      #info1 {
-        &_title,
-        &_sub {
-          text-align: center;
-        }
-
-        &_title {
-          grid-area: it2;
-          align-self: end;
-          border-top: 1px solid $color-text-deco;
-          border-bottom: 1px solid $color-text-deco;
-          padding: $nspace3 0;
-        }
-
-        &_sub {
-          grid-area: is1;
-        }
-
-        &_where_text,
-        &_when_text,
-        &_dress_code_text {
-          align-self: center;
-        }
-
-        &_where {
-          &_icon {
-            grid-area: iwh;
-          }
-
-          &_text {
-            grid-area: twh;
-          }
-        }
-
-        &_when {
-          &_icon {
-            grid-area: iwe;
-          }
-
-          &_text {
-            grid-area: twe;
-          }
-        }
-
-        &_dress_code {
-          &_icon {
-            grid-area: idc;
-          }
-
-          &_text {
-            grid-area: tdc;
-          }
-        }
-      }
-
-      grid-template-areas:
-          "it2"
-          "is1"
-          "iwh"
-          "twh"
-          "iwe"
-          "twe"
-          "idc"
-          "tdc";
-
-      @include screen-small {
-        grid-template-areas:
-          "it2 it2 it2"
-          "is1 is1 is1"
-          "... ... ..."
-          "... ... ..."
-          "... ... ..."
-          "iwh twh twh"
-          "... ... ..."
-          "iwe twe twe"
-          "... ... ..."
-          "idc tdc tdc"
-          "... ... ..."
-          "... ... ..."
-          "... ... ...";
-      }
-
-      @include screen-medium {
-        grid-template-areas:
-          "... it2 it2 it2 ..."
-          "... is1 is1 is1 ..."
-          "... ... ... ... ..."
-          "... ... ... ... ..."
-          "... ... ... ... ..."
-          "... iwh twh twh ..."
-          "... ... ... ... ..."
-          "... iwe twe twe ..."
-          "... ... ... ... ..."
-          "... idc tdc tdc ..."
-          "... ... ... ... ..."
-          "... ... ... ... ..."
-          "... ... ... ... ...";
-      }
-
-      @include screen-large {
-        grid-template-areas:
-          "... ... it2 it2 it2 ... ..."
-          "... ... is1 is1 is1 ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... iwh twh twh ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... iwe twe twe ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... idc tdc tdc ... ...";
-      }
-    }
-  }
-
-  &_info2,
-  &_info3,
-  &_info4 {
-    .container {
-      .info {
+      .showcase {
         &_img {
-          grid-area: iim;
+          grid-area: sim;
           align-self: center;
         }
 
         &_heading {
-          grid-area: ihe;
+          grid-area: she;
           align-self: end;
         }
 
         &_paragraph {
-          grid-area: ipa;
+          grid-area: spa;
           margin-bottom: 0;
         }
       }
 
       grid-template-areas:
-        "iim"
-        "ihe"
-        "ipa";
+        "sim"
+        "she"
+        "spa";
 
       @include screen-small {
         grid-template-areas:
-          "iim iim iim"
-          "ihe ihe ihe"
-          "ipa ipa ipa";
+          "sim sim sim"
+          "she she she"
+          "spa spa spa";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... iim iim iim ..."
-          "... ihe ihe ihe ..."
-          "... ipa ipa ipa ...";
+          "sim sim sim sim sim"
+          "... she she she ..."
+          "... spa spa spa ...";
       }
 
       @include screen-large {
@@ -289,8 +161,52 @@
         }
 
         grid-template-areas:
-          "... iim iim iim ihe ihe ..."
-          "... iim iim iim ipa ipa ...";
+          "... sim sim sim she she ..."
+          "... sim sim sim spa spa ...";
+      }
+    }
+  }
+
+  &_about {
+    .container {
+      #about_title {
+        grid-area: at2;
+      }
+
+      grid-template-areas:
+        "at2";
+
+      @include screen-small {
+        grid-template-areas:
+          "at2 at2 at2";
+      }
+    }
+  }
+
+  &_about_data {
+    .container {
+      #data_where {
+        grid-area: dwh;
+      }
+
+      #data_when {
+        grid-area: dwe;
+      }
+
+      #data_dress-code {
+        grid-area: ddc;
+      }
+
+      grid-template-areas:
+        "dwh"
+        "dwe"
+        "ddc";
+
+      @include screen-small {
+        grid-template-areas:
+          "dwh dwh dwh"
+          "dwe dwe dwe"
+          "ddc ddc ddc";
       }
     }
   }
