@@ -23,7 +23,8 @@
   font-style: italic;
 }
 
-@import "main";
+//noinspection CssUnknownTarget
+@import "nspace";
 
 #home {
   &_header {
