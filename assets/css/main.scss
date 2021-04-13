@@ -26,10 +26,47 @@
 //noinspection CssUnknownTarget
 @import "nspace";
 
+#footer {
+  .container {
+    grid-row-gap: $nspace3;
+
+    #signature {
+      grid-area: sig;
+      align-self: end;
+      text-align: center;
+    }
+
+    #copyright {
+      grid-area: cop;
+      text-align: center;
+    }
+
+    grid-template-areas:
+      "sig"
+      "cop";
+
+    @include screen-small {
+      grid-template-areas:
+        "sig sig sig"
+        "cop cop cop";
+    }
+
+    @include screen-medium {
+      grid-template-areas:
+        "... sig sig sig ..."
+        "... cop cop cop ...";
+    }
+
+    @include screen-large {
+      grid-template-areas:
+        "... ... sig sig sig ... ..."
+        "... ... cop cop cop ... ...";
+    }
+  }
+}
+
 #home {
   &_header {
-    position: relative;
-
     .container {
       grid-template-rows: 1.25fr 1fr min-content;
 
@@ -113,7 +150,36 @@
     }
   }
 
-  &_showcase_food,
+  &_showcase,
+  &_about,
+  &_cta {
+    .container {
+      .section_title {
+        grid-area: st2;
+        align-self: center;
+      }
+
+      grid-template-areas:
+        "st2";
+
+      @include screen-small {
+        grid-template-areas:
+          "st2 st2 st2";
+      }
+
+      @include screen-medium {
+        grid-template-areas:
+          "... st2 st2 st2 ...";
+      }
+
+      @include screen-large {
+        grid-template-areas:
+          "... st2 st2 st2 st2 st2 ...";
+      }
+    }
+  }
+
+  &_showcase_chef,
   &_showcase_crowd,
   &_showcase_minibar {
     .container {
@@ -136,12 +202,14 @@
 
       grid-template-areas:
         "sim"
+        "..."
         "she"
         "spa";
 
       @include screen-small {
         grid-template-areas:
           "sim sim sim"
+          "... ... ..."
           "she she she"
           "spa spa spa";
       }
@@ -149,6 +217,7 @@
       @include screen-medium {
         grid-template-areas:
           "sim sim sim sim sim"
+          "... ... ... ... ..."
           "... she she she ..."
           "... spa spa spa ...";
       }
@@ -161,24 +230,8 @@
         }
 
         grid-template-areas:
-          "... sim sim sim she she ..."
-          "... sim sim sim spa spa ...";
-      }
-    }
-  }
-
-  &_about {
-    .container {
-      #about_title {
-        grid-area: at2;
-      }
-
-      grid-template-areas:
-        "at2";
-
-      @include screen-small {
-        grid-template-areas:
-          "at2 at2 at2";
+          "sim sim sim sim she she she"
+          "sim sim sim sim spa spa spa";
       }
     }
   }
@@ -211,155 +264,90 @@
     }
   }
 
-  &_cta1 {
+  &_cta_form {
     .container {
-      #cta1 {
-        &_title,
-        &_sub {
-          text-align: center;
-        }
-
-        &_title {
-          grid-area: ct2;
-          align-self: end;
-          border-top: 1px solid $color-text-deco;
-          border-bottom: 1px solid $color-text-deco;
-          padding: $nspace3 0;
-        }
-
-        &_sub {
-          grid-area: cs1;
-        }
-      }
-
       nametag-form {
-        grid-area: nfo;
-        display: grid;
-        grid-row-gap: $nspace3;
-
-        fieldset:last-child {
-          margin-top: $nspace3;
-        }
-
-        button:not(:first-child) {
-          margin-left: $nspace2;
-        }
-
-        h6 {
-          margin-top: $nspace2;
-        }
+        grid-area: fna;
       }
 
       grid-template-areas:
-          "ct2"
-          "cs1"
-          "..."
-          "..."
-          "..."
-          "nfo";
+        "fna";
 
       @include screen-small {
         grid-template-areas:
-            "ct2 ct2 ct2"
-            "cs1 cs1 cs1"
-            "... ... ..."
-            "nfo nfo nfo";
+          "fna fna fna";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... ct2 ct2 ct2 ..."
-          "... cs1 cs1 cs1 ..."
-          "... ... ... ... ..."
-          "... nfo nfo nfo ...";
+          "... fna fna fna ...";
       }
-
       @include screen-large {
         grid-template-areas:
-          "... ... ct2 ct2 ct2 ... ..."
-          "... ... cs1 cs1 cs1 ... ..."
-          "... ... ... ... ... ... ..."
-          "... ... nfo nfo nfo ... ...";
+          "... ... fna fna fna ... ...";
       }
     }
   }
 
-  &_cta2 {
+  &_cta_contact {
     .container {
-      #cta2_title {
-        grid-area: cti;
-        text-align: center;
-        border-top: 1px solid $color-text-deco;
-        border-bottom: 1px solid $color-text-deco;
-        padding: $nspace3;
+      #contact_heading {
+        grid-area: che;
       }
 
-      #cta2_linkedin {
-        &_paragraph {
-          grid-area: cpa;
-          margin: auto;
-          max-width: 30ch;
-          text-align: center;
+      #contact_paragraph {
+        grid-area: cpa;
+      }
+
+      #contact_linkedin {
+        grid-area: cli;
+        justify-self: center;
+        display: grid;
+        grid-template-columns: $icon3 1fr;
+        grid-column-gap: $nspace2;
+        align-items: center;
+        max-width: max-content;
+        border: 1px solid $color-text-deco;
+        border-radius: $border-radius;
+        padding: $nspace3;
+        color: $color-text;
+        font-size: 1.25rem;
+
+        svg {
+          height: 2rem;
+          width: 2rem;
         }
 
-        &_link {
-          grid-area: cli;
-          justify-self: center;
-          display: grid;
-          grid-template-columns: $icon3 1fr;
-          grid-column-gap: $nspace2;
-          align-items: center;
-          max-width: max-content;
-          border: 1px solid $color-text-deco;
-          border-radius: $border-radius;
-          padding: $nspace3;
-          color: $color-text;
-          font-size: 1.25rem;
-
-          svg {
-            height: 2rem;
-            width: 2rem;
-          }
-
-          &:hover, &:active, &:focus {
-            border-color: $color-text;
-          }
-
-          @include is-unselectable;
+        &:hover, &:active, &:focus {
+          border-color: $color-text;
         }
+
+        @include is-unselectable;
       }
 
       grid-template-areas:
-        "cti"
+        "che"
         "cpa"
         "cli";
 
       @include screen-small {
         grid-template-areas:
-          "... ... ..."
-          "cti cti cti"
-          "... ... ..."
+          "che che che"
           "cpa cpa cpa"
-          "... ... ..."
-          "cli cli cli"
-          "... ... ...";
+          "cli cli cli";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... cti cti cti ..."
-          "... ... ... ... ..."
+          "... che che che ..."
           "... cpa cpa cpa ..."
-          "... ... ... ... ..."
           "... cli cli cli ...";
       }
 
       @include screen-large {
         grid-template-areas:
-          "... ... cti cti cti ... ..."
-          "... ... ... ... ... ... ..."
+          "... ... che che che ... ..."
           "... ... cpa cpa cpa ... ..."
-          "... ... ... ... ... ... ..."
           "... ... cli cli cli ... ...";
       }
     }
@@ -430,45 +418,6 @@
         "... ... ... ... ... ... ..."
         "... ... ... ... ... ... ..."
         "nta nta nta nta nta nta nta";
-    }
-  }
-}
-
-#footer {
-  .container {
-    grid-row-gap: $nspace3;
-
-    #signature {
-      grid-area: sig;
-      align-self: end;
-      text-align: center;
-    }
-
-    #copyright {
-      grid-area: cop;
-      text-align: center;
-    }
-
-    grid-template-areas:
-      "sig"
-      "cop";
-
-    @include screen-small {
-      grid-template-areas:
-        "sig sig sig"
-        "cop cop cop";
-    }
-
-    @include screen-medium {
-      grid-template-areas:
-        "... sig sig sig ..."
-        "... cop cop cop ...";
-    }
-
-    @include screen-large {
-      grid-template-areas:
-        "... ... sig sig sig ... ..."
-        "... ... cop cop cop ... ...";
     }
   }
 }
