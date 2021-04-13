@@ -28,99 +28,92 @@
 
 #home {
   &_header {
+    position: relative;
+
     .container {
-      #page_title, #page_sub {
+      grid-template-rows: 1.375fr min-content 1fr min-content;
+
+      #header_title, #header_sub {
         text-align: center;
       }
 
-      #page_title {
-        grid-area: pta;
+      #header_title {
+        grid-area: ht1;
         align-self: end;
       }
 
-      #page_sub {
-        grid-area: psu;
-        align-self: end;
-      }
-
-      #logo_quadra,
-      #logo_twentytwo,
-      #logo_westin_ottawa {
-        max-width: 80%;
-        max-height: $icon2;
-        justify-self: center;
-      }
-
-      #logo_quadra {
-        grid-area: lqu;
-        display: grid;
-        grid-template-columns: $icon2 1fr;
-        grid-column-gap: $nspace1;
+      #header_sponsors {
+        grid-area: hsp;
+        display: flex;
+        column-gap: $nspace3;
         align-items: center;
-        font-family: $font-title;
-        font-size: 1.1rem;
-        line-height: 1;
+        margin: 0 auto auto auto;
+
+        > #sponsors_twentytwo,
+        > #sponsors_westin-ottawa {
+          max-width: 80px;
+        }
+
+        > #sponsors_twentytwo {
+          height: 24px;
+        }
+
+        > #sponsors_quadra {
+          display: flex;
+
+          > img {
+            height: 30px;
+            width: 30px;
+            margin-right: $nspace1;
+          }
+        }
+
+        > #sponsors_westin-ottawa {
+          height: 24px;
+          opacity: 0.875;
+        }
       }
 
-      #logo_twentytwo {
-        grid-area: ltt;
-      }
-
-      #logo_westin_ottawa {
-        grid-area: lwo;
-        opacity: 0.85;
+      #header_scroll {
+        grid-area: hsc;
+        align-self: end;
+        text-align: center;
+        font-size: $h6-font-size;
+        line-height: $h6-line-height;
       }
 
       grid-template-areas:
-      "..."
-      "..."
-      "..."
-      "pta"
-      "psu"
-      "lqu"
-      "ltt"
-      "lwo"
-      "..."
-      "..."
-      "...";
+        "ht1"
+        "..."
+        "hsp"
+        "hsc";
 
       @include screen-small {
         grid-template-areas:
-        "... ... ..."
-        "... ... ..."
-        "... ... ..."
-        "pta pta pta"
-        "psu psu psu"
-        "lqu ltt lwo"
-        "... ... ..."
-        "... ... ..."
-        "... ... ...";
+          "ht1 ht1 ht1"
+          "... ... ..."
+          "hsp hsp hsp"
+          "hsc hsc hsc";
       }
 
       @include screen-medium {
         grid-template-areas:
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... pta pta pta ..."
-        "... psu psu psu ..."
-        "... lqu ltt lwo ..."
-        "... ... ... ... ..."
-        "... ... ... ... ..."
-        "... ... ... ... ...";
+          "... ht1 ht1 ht1 ..."
+          "... ... ... ... ..."
+          "... hsp hsp hsp ..."
+          "... hsc hsc hsc ...";
       }
 
       @include screen-large {
+        grid-template-rows: 2.625fr repeat(3, min-content) 1fr min-content;
+
         grid-template-areas:
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... pta pta pta ... ..."
-        "... ... psu psu psu ... ..."
-        "... ... lqu ltt lwo ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ..."
-        "... ... ... ... ... ... ...";
+          "... ht1 ht1 ht1 ht1 ht1 ..."
+          "... ... ... ... ... ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... ... ... ... ... ..."
+          "... ... hsp hsp hsp ... ..."
+          "... ... hsc hsc hsc ... ...";
       }
     }
   }
