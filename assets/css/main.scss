@@ -424,25 +424,37 @@
     .container {
       #goodbye_heading {
         grid-area: ghe;
-        align-self: center;
+        align-self: end;
+        border-top: 1px solid $color-text-deco;
+        border-bottom: 1px solid $color-text-deco;
+        padding: $nspace3 0;
+      }
+
+      #goodbye_paragraph {
+        grid-area: gpa;
+        text-align: center;
       }
 
       grid-template-areas:
-        "ghe";
+        "ghe"
+        "gpa";
 
       @include screen-small {
         grid-template-areas:
-          "ghe ghe ghe";
+          "ghe ghe ghe"
+          "gpa gpa gpa";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... ghe ghe ghe ...";
+          "... ghe ghe ghe ..."
+          "... gpa gpa gpa ...";
       }
 
       @include screen-large {
         grid-template-areas:
-          "... ... ghe ghe ghe ... ...";
+          "... ... ghe ghe ghe ... ..."
+          "... ... gpa gpa gpa ... ...";
       }
     }
   }
