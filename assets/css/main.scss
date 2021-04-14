@@ -174,7 +174,7 @@
 
       @include screen-medium {
         grid-template-areas:
-          "... st2 st2 st2 ...";
+          "st2 st2 st2 st2 st2";
       }
 
       @include screen-large {
@@ -403,7 +403,7 @@
 
       @include screen-large {
         grid-template-areas:
-          "... ghe ghe ghe ghe ghe ...";
+          "... ... ghe ghe ghe ... ...";
       }
     }
   }
