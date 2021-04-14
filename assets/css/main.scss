@@ -79,38 +79,41 @@
         align-self: end;
       }
 
-      #header_sponsors {
-        grid-area: hsp;
-        display: flex;
-        column-gap: $nspace3;
-        align-items: center;
+      #header_twentytwo,
+      #header_quadra,
+      #header_westin-ottawa {
         margin: $nspace4 auto auto auto;
+      }
 
-        > #sponsors_twentytwo,
-        > #sponsors_westin-ottawa {
-          max-width: 80px;
-        }
+      #header_twentytwo,
+      #header_westin-ottawa {
+        height: 22px;
+        max-width: 80px;
+      }
 
-        > #sponsors_twentytwo {
-          height: 20px;
-        }
+      #header_twentytwo {
+        grid-area: htt;
+      }
 
-        > #sponsors_quadra {
-          display: flex;
-          font-family: $font-title;
+      #header_quadra {
+        grid-area: hqu;
+        display: flex;
+        align-items: center;
+        font-family: $font-title;
+        font-size: $h5-font-size;
 
-          > img {
-            height: 30px;
-            width: 30px;
-            margin-right: $nspace1;
-          }
-        }
-
-        > #sponsors_westin-ottawa {
-          height: 24px;
-          opacity: 0.875;
+        > img {
+          height: 22px;
+          width: 22px;
+          margin-right: $nspace1;
         }
       }
+
+      #header_westin-ottawa {
+        grid-area: hwo;
+        opacity: 0.875;
+      }
+
 
       #header_scroll {
         grid-area: hsc;
@@ -122,20 +125,22 @@
 
       grid-template-areas:
         "ht1"
-        "hsp"
+        "htt"
+        "hqu"
+        "hwo"
         "hsc";
 
       @include screen-small {
         grid-template-areas:
           "ht1 ht1 ht1"
-          "hsp hsp hsp"
+          "htt hqu hwo"
           "hsc hsc hsc";
       }
 
       @include screen-medium {
         grid-template-areas:
           "... ht1 ht1 ht1 ..."
-          "... hsp hsp hsp ..."
+          "... htt hqu hwo ..."
           "... hsc hsc hsc ...";
       }
 
@@ -144,7 +149,7 @@
 
         grid-template-areas:
           "... ht1 ht1 ht1 ht1 ht1 ..."
-          "... ... hsp hsp hsp ... ..."
+          "... ... htt hqu hwo ... ..."
           "... ... hsc hsc hsc ... ...";
       }
     }
