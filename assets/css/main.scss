@@ -394,21 +394,21 @@
 
       grid-template-areas:
         "fhe"
-        "fna"
-        "fpa";
+        "fpa"
+        "fna";
 
       @include screen-small {
         grid-template-areas:
           "fhe fhe fhe"
-          "fna fna fna"
-          "fpa fpa fpa";
+          "fpa fpa fpa"
+          "fna fna fna";
       }
 
       @include screen-medium {
         grid-template-areas:
           "... fhe fhe fhe ..."
-          "... fna fna fna ..."
-          "... fpa fpa fpa ...";
+          "... fpa fpa fpa ..."
+          "... fna fna fna ...";
       }
       @include screen-large {
         grid-template-rows: 1fr 1.5fr;
