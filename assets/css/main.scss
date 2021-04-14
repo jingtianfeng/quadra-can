@@ -192,6 +192,9 @@
         &_img {
           grid-area: sim;
           align-self: center;
+          margin: 0 auto;
+          border: 1px solid $color-depth;
+          box-shadow: $box-shadow-3;
         }
 
         &_heading {
@@ -201,7 +204,6 @@
 
         &_paragraph {
           grid-area: spa;
-          margin-bottom: 0;
         }
       }
 
@@ -228,13 +230,32 @@
       }
 
       @include screen-large {
-        .info_paragraph {
-          font-size: 0.9rem;
+        .showcase_img {
+          max-width: 400px;
+        }
+
+        .showcase_paragraph {
+          max-width: 24ch;
         }
 
         grid-template-areas:
           "sim sim sim sim she she she"
           "sim sim sim sim spa spa spa";
+      }
+    }
+  }
+
+  &_showcase_crowd {
+    .container {
+      @include screen-large {
+        .showcase_heading,
+        .showcase_paragraph {
+          margin-left: $nspace5;
+        }
+
+        grid-template-areas:
+          "she she she sim sim sim sim"
+          "spa spa spa sim sim sim sim";
       }
     }
   }
