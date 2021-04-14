@@ -114,7 +114,6 @@
         opacity: 0.875;
       }
 
-
       #header_scroll {
         grid-area: hsc;
         align-self: end;
@@ -241,6 +240,11 @@
 
   &_about_data {
     .container {
+      #data_heading {
+        grid-area: dhe;
+        align-self: end;
+      }
+
       #info_where_icon,
       #info_when_icon,
       #info_dress-code_icon {
@@ -257,12 +261,13 @@
 
       #data_info {
         grid-area: din;
+        align-self: center;
         display: grid;
         grid-template-columns: $icon3 max-content;
+        grid-template-rows: repeat(3, $icon3);
         grid-column-gap: $nspace4;
-        grid-row-gap: $nspace3;
+        grid-row-gap: $nspace5;
         align-items: center;
-        margin: 0 auto auto auto;
 
         #info {
           &_where {
@@ -306,36 +311,28 @@
         grid-area: dpa;
       }
 
-      #data_cta {
-        grid-area: dct;
-      }
-
       grid-template-areas:
+        "dhe"
         "din"
-        "..."
-        "dpa"
-        "dct";
+        "dpa";
 
       @include screen-small {
         grid-template-areas:
+          "dhe dhe dhe"
           "din din din"
-          "... ... ..."
-          "dpa dpa dpa"
-          "dct dct dct";
+          "dpa dpa dpa";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... din din din ..."
-          "... ... ... ... ..."
-          "... dpa dpa dpa ..."
-          "... dct dct dct ...";
+          "din din din dhe dhe"
+          "din din din dpa dpa";
       }
 
       @include screen-large {
         grid-template-areas:
-          "din din din ... dpa dpa dpa"
-          "din din din ... dct dct dct";
+          "din din din ... dhe dhe dhe"
+          "din din din ... dpa dpa dpa";
       }
     }
   }
@@ -371,52 +368,22 @@
         grid-area: che;
       }
 
-      #contact_linkedin {
-        grid-area: cli;
-        justify-self: center;
-        display: grid;
-        grid-template-columns: $icon3 1fr;
-        grid-column-gap: $nspace2;
-        align-items: center;
-        max-width: max-content;
-        border: 1px solid $color-text-deco;
-        border-radius: $border-radius;
-        padding: $nspace3;
-        color: $color-text;
-        font-size: 1.25rem;
-
-        svg {
-          height: 2rem;
-          width: 2rem;
-        }
-
-        &:hover, &:active, &:focus {
-          border-color: $color-text;
-        }
-
-        @include is-unselectable;
-      }
-
       grid-template-areas:
-        "che"
-        "cli";
+        "che";
 
       @include screen-small {
         grid-template-areas:
-          "che che che"
-          "cli cli cli";
+          "che che che";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... che che che ..."
-          "... cli cli cli ...";
+          "... che che che ...";
       }
 
       @include screen-large {
         grid-template-areas:
-          "... ... che che che ... ..."
-          "... ... cli cli cli ... ...";
+          "... ... che che che ... ...";
       }
     }
   }
