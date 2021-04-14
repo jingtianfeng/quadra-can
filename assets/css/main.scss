@@ -376,28 +376,29 @@
     }
   }
 
-  &_cta_contact {
+  &_cta_goodbye {
     .container {
       #contact_heading {
-        grid-area: che;
+        grid-area: ghe;
+        align-self: center;
       }
 
       grid-template-areas:
-        "che";
+        "ghe";
 
       @include screen-small {
         grid-template-areas:
-          "che che che";
+          "ghe ghe ghe";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "... che che che ...";
+          "... ghe ghe ghe ...";
       }
 
       @include screen-large {
         grid-template-areas:
-          "... ... che che che ... ...";
+          "... ghe ghe ghe ghe ghe ...";
       }
     }
   }
