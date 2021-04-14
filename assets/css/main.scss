@@ -161,6 +161,7 @@
       .section_title {
         grid-area: st2;
         align-self: center;
+        text-align: center;
       }
 
       grid-template-areas:
@@ -240,11 +241,6 @@
 
   &_about_data {
     .container {
-      #data_heading {
-        grid-area: dhe;
-        align-self: end;
-      }
-
       #info_where_icon,
       #info_when_icon,
       #info_dress-code_icon {
@@ -308,19 +304,28 @@
           "dci dcp";
       }
 
+      #data_heading,
+      #data_paragraph {
+        align-self: center;
+      }
+
+      #data_heading {
+        grid-area: dhe;
+      }
+
       #data_paragraph {
         grid-area: dpa;
       }
 
       grid-template-areas:
-        "dhe"
         "din"
+        "dhe"
         "dpa";
 
       @include screen-small {
         grid-template-areas:
-          "dhe dhe dhe"
           "din din din"
+          "dhe dhe dhe"
           "dpa dpa dpa";
       }
 
