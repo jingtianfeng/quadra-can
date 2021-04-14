@@ -342,6 +342,19 @@
     .container {
       nametag-form {
         grid-area: fna;
+        margin: $nspace4 0;
+
+        fieldset:not(:first-child, :last-child) {
+          margin-top: $nspace3;
+        }
+
+        fieldset:last-child {
+          margin-top: $nspace4;
+
+          button:not(:first-child) {
+            margin-left: $nspace3;
+          }
+        }
       }
 
       grid-template-areas:
