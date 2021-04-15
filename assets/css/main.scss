@@ -156,7 +156,8 @@
 
   &_showcase,
   &_about,
-  &_cta {
+  &_cta,
+  &_goodbye {
     .container {
       .section_title {
         grid-area: st2;
@@ -422,45 +423,6 @@
         grid-template-areas:
           "fhe fhe fhe ... fna fna fna"
           "fpa fpa fpa ... fna fna fna";
-      }
-    }
-  }
-
-  &_cta_goodbye {
-    .container {
-      #goodbye_heading {
-        grid-area: ghe;
-        align-self: end;
-        border-top: 1px solid $color-text-deco;
-        border-bottom: 1px solid $color-text-deco;
-        padding: $nspace3 0;
-      }
-
-      #goodbye_paragraph {
-        grid-area: gpa;
-        text-align: center;
-      }
-
-      grid-template-areas:
-        "ghe"
-        "gpa";
-
-      @include screen-small {
-        grid-template-areas:
-          "ghe ghe ghe"
-          "gpa gpa gpa";
-      }
-
-      @include screen-medium {
-        grid-template-areas:
-          "... ghe ghe ghe ..."
-          "... gpa gpa gpa ...";
-      }
-
-      @include screen-large {
-        grid-template-areas:
-          "... ... ghe ghe ghe ... ..."
-          "... ... gpa gpa gpa ... ...";
       }
     }
   }
