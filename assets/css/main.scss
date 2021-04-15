@@ -286,8 +286,10 @@
         grid-column-gap: $nspace4;
         grid-row-gap: $nspace4;
         align-items: center;
+        max-width: min-content;
+        margin: 0 auto;
         border: 1px solid $color-text-deco;
-        border-radius: $border-radius-round;
+        border-radius: $border-radius;
         padding: $nspace4;
 
         #info {
