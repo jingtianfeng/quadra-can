@@ -337,6 +337,7 @@
 
       #data_heading {
         grid-area: dhe;
+        max-width: 300px;
       }
 
       #data_paragraph {
@@ -399,6 +400,7 @@
 
       #form_paragraph {
         grid-area: fpa;
+        max-width: 28ch;
       }
 
       grid-template-areas:
