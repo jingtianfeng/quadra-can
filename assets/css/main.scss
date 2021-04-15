@@ -283,9 +283,11 @@
         grid-template-columns: $icon3 max-content;
         grid-template-rows: repeat(3, $icon3);
         grid-column-gap: $nspace4;
-        grid-row-gap: $nspace5;
+        grid-row-gap: $nspace4;
         align-items: center;
-        margin: $nspace5 0;
+        border: 1px solid $color-text-deco;
+        border-radius: $border-radius-round;
+        padding: $nspace4;
 
         #info {
           &_where {
@@ -340,20 +342,24 @@
 
       grid-template-areas:
         "din"
+        "..."
         "dhe"
         "dpa";
 
       @include screen-small {
         grid-template-areas:
           "din din din"
+          "... ... ..."
           "dhe dhe dhe"
           "dpa dpa dpa";
       }
 
       @include screen-medium {
         grid-template-areas:
-          "din din din dhe dhe"
-          "din din din dpa dpa";
+          "... din din din ..."
+          "... ... ... ... ..."
+          "... dhe dhe dhe ..."
+          "... dpa dpa dpa ...";
       }
 
       @include screen-large {
