@@ -235,6 +235,11 @@
           max-width: 400px;
         }
 
+        .showcase_heading,
+        .showcase_paragraph {
+          margin: 0 $nspace5;
+        }
+
         .showcase_paragraph {
           max-width: 24ch;
         }
@@ -249,11 +254,6 @@
   &_showcase_crowd {
     .container {
       @include screen-large {
-        .showcase_heading,
-        .showcase_paragraph {
-          margin-left: $nspace5;
-        }
-
         grid-template-areas:
           "she she she sim sim sim sim"
           "spa spa spa sim sim sim sim";
