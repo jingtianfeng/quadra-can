@@ -192,10 +192,6 @@
       .showcase {
         &_img {
           grid-area: sim;
-          align-self: center;
-          margin: 0 auto;
-          border: 1px solid $color-depth;
-          box-shadow: $box-shadow-3;
         }
 
         &_heading {
@@ -231,17 +227,9 @@
       }
 
       @include screen-large {
-        .showcase_img {
-          max-width: 400px;
-        }
-
         .showcase_heading,
         .showcase_paragraph {
           margin: 0 $nspace5;
-        }
-
-        .showcase_paragraph {
-          max-width: 24ch;
         }
 
         grid-template-areas:
