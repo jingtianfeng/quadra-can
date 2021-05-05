@@ -8,14 +8,16 @@
     <title>
         Quadra Events | {{ page.title }}
     </title>
-    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="icon"
+          type="image/x-icon" href="{{'/assets/img/favicon.ico' | relative_url}}">
+    <link rel="stylesheet"
+          href="{{'/assets/css/main.css' | relative_url}}">
     <script type="module"
-            src="/assets/js/NametagForm.js">
+            src="{{'/assets/js/NametagForm.js' | relative_url}}">
     </script>
     <script type="module"
-            src="/assets/js/NametagTable.js">
+            src="{{'/assets/js/NametagTable.js' | relative_url}}">
     </script>
 </head>
 <body>

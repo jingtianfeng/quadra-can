@@ -2,23 +2,23 @@
 ---
 
 @font-face {
-  src: url("/assets/fonts/domaine-sans-display-test-regular.woff") format("woff");
+  src: url("{{'/assets/fonts/domaine-sans-display-test-regular.woff' | relative_url}}") format("woff");
   font-family: "Domaine Sans Display";
 }
 
 @font-face {
-  src: url("/assets/fonts/domaine-sans-display-test-regular-italic.woff") format("woff");
+  src: url("{{'/assets/fonts/domaine-sans-display-test-regular-italic.woff' | relative_url}}") format("woff");
   font-family: "Domaine Sans Display";
   font-style: italic;
 }
 
 @font-face {
-  src: url("/assets/fonts/domaine-sans-text-test-regular.woff") format("woff");
+  src: url("{{'/assets/fonts/domaine-sans-text-test-regular.woff' | relative_url}}") format("woff");
   font-family: "Domaine Sans Text";
 }
 
 @font-face {
-  src: url("/assets/fonts/domaine-sans-text-test-regular-italic.woff") format("woff");
+  src: url("{{'/assets/fonts/domaine-sans-text-test-regular-italic.woff' | relative_url}}") format("woff");
   font-family: "Domaine Sans Text";
   font-style: italic;
 }
