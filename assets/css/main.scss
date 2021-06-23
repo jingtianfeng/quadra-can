@@ -437,13 +437,14 @@
       grid-area: nta;
 
       #admin_msg {
+        margin-bottom: $nspace3;
       }
 
       #admin_csv {
       }
 
       #admin_table {
-        margin-top: $nspace4;
+        margin-top: $nspace5;
 
         th,
         td {
